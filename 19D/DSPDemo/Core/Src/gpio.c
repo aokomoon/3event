@@ -64,10 +64,11 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOA, AD9854_OSK_Pin|AD9854_D2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOH, SWITCH_Pin|AD9854_A5_Pin|AD9854_WR_Pin|AD9854_D4_Pin
+                          |AD9854_UCLK_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOH, AD9854_A5_Pin|AD9854_WR_Pin|AD9854_D4_Pin|AD9854_UCLK_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOI, AD9854_D6_Pin|AD9854_A0_Pin|AD9854_D5_Pin|AD9854_A4_Pin
@@ -95,6 +96,13 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : SWITCH_Pin */
+  GPIO_InitStruct.Pin = SWITCH_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+  HAL_GPIO_Init(SWITCH_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PB0 */
   GPIO_InitStruct.Pin = GPIO_PIN_0;
@@ -139,7 +147,7 @@ void MX_GPIO_Init(void)
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 1, 0);
- // HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+ //HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 }
 

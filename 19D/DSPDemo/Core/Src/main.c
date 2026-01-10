@@ -63,13 +63,14 @@ volatile uint8_t key = 0;
 void SystemClock_Config(void);
 void PeriphCommonClock_Config(void);
 static void MPU_Config(void);
-
 /* USER CODE BEGIN PFP */
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 uint32_t freq = 1000;
+ uint8_t  R_OUT_state ;
+
 /* USER CODE END 0 */
 
 /**
@@ -123,13 +124,15 @@ int main(void)
   MX_ADC3_Init();
   MX_FMC_Init();
   /* USER CODE BEGIN 2 */
-  simply819_2khz();
- HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+  simply819_2khz();    //采样时钟
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);//先准备时钟再使能中断
 	adc_init();
-
+ 
    freq =1000;
+   R_OUT_state = 0;    //初始状态，继电器断开
+   HAL_GPIO_WritePin(SWITCH_GPIO_Port,SWITCH_Pin,R_OUT_state);//低电平断开，负载电压，继电器接口
    AD9854_InitSingle();
-   AD9854_SetSine(1000,4095); //初始化1khz正弦波
+   AD9854_SetSine(1000,4095); //初始化1khz正弦波，幅值大约是220MVpp
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -161,16 +164,21 @@ int main(void)
       
     if(start_flag == 1 && (FSK_mode == 1))//扫频   1000-500k,步进100hz
     { 
-      freq = freq + 100;
+      freq = freq + 1000;
       AD9854_SetSine(freq,4095);
-      if(freq>=500000)
+      if(freq>400000)
       {
          freq = 1000;
+         AD9854_SetSine(freq,4095);
          FSK_mode = 0;
+         start_flag = 1;
+         break;
       }
-       
-      
-       start_flag = 0;
+      else 
+      {
+        __NOP();
+      }
+      start_flag = 0;
     }
     else if((FSK_mode == 0))
     {

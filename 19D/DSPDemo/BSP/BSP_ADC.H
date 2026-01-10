@@ -5,6 +5,9 @@
 #define real_v                  1.414
 #define ADC_SAMPLE_RATE			409600
 #define ADC_SAMPLE_LENGTH		4096
+
+
+
 extern float32_t thd_value;
 extern float32_t result1;
 extern float32_t result2;

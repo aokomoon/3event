@@ -61,6 +61,8 @@ void Error_Handler(void);
 #define AD9854_D1_GPIO_Port GPIOC
 #define AD9854_OSK_Pin GPIO_PIN_1
 #define AD9854_OSK_GPIO_Port GPIOA
+#define SWITCH_Pin GPIO_PIN_2
+#define SWITCH_GPIO_Port GPIOH
 #define AD9854_D2_Pin GPIO_PIN_7
 #define AD9854_D2_GPIO_Port GPIOA
 #define AD9854_RD_Pin GPIO_PIN_4
@@ -101,7 +103,7 @@ void Error_Handler(void);
 #define AD9854_A3_GPIO_Port GPIOI
 
 /* USER CODE BEGIN Private defines */
-
+extern uint8_t  R_OUT_state ;
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
