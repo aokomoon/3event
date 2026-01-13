@@ -43,18 +43,24 @@ float32_t pdata2  =0;
 float32_t pdata3  =0;
 
 float32_t U_source;    //输出电压源的值
+float32_t U_source_reg;
 float32_t U_real;      //负载电阻的值
 
 //电阻值
 #define R_IN_f   5000.0f		//输入电阻负载
 #define R_OUT_f  20000.0f		//输出电阻负载
-#define U_IN_ZOOM  1.0f     	//输入电压增益			待定
-#define U_OUT_ZOOM  1.0f     	//输出电压增益	
+#define U_IN_ZOOM  5.75f     	//输入电压放大增益			
+#define U_OUT_ZOOM  2.63f     	//输出电压缩小增益	
+
+float32_t U_ZOOM;
+
 
 float32_t R_IN;	     //输入电阻
 float32_t R_OUT;	 //输出电阻
 
-
+static int R_OUT1_count = 0;
+static int R_OUT2_count = 0;
+float32_t R_OUT_DC;
 
 //扫频
 volatile uint8_t FSK_mode;
@@ -65,12 +71,15 @@ float32_t fir_output[ADC_SAMPLE_LENGTH];
 
 //采样时钟819200hz   分辨率200hz
 
-//输入电阻是ADC1,ADC2,其中ADC1是负载电阻的左端，就是信号输入，ADC2是负载电阻右侧，实际就是输入电阻的电压
+//输入电阻是ADC1,ADC2,其中ADC1是负载电阻的左端，就是信号输入，ADC2是负载电阻右侧，实际就是输入电阻的电压			75倍
 //输出电阻分两个采样周期测量，ADC3是测量输出电压的点
 //SWITCH引脚为低电平的时候就是负载空接的时候，高电平的时候就是负载接入的状态
 
 //第一版比例
-//直流和交流的缩放倍数0.265，原来的直流5.16，衰减后的直流1.42      交流峰峰值：1.52V   衰减后：0.4v				
+//直流和交流的缩放倍数0.265，原来的直流5.16，衰减后的直流1.42      交流峰峰值：1.52V   衰减后：0.4v	
+//第二版比例
+//直流和交流的缩放倍数2.95，原来的直流7.04，衰减后的直流2.38      交流峰峰值：3.28V   衰减后：1.10v	
+
 
 /**
  * @brief ADC数字数据处理函数
@@ -78,7 +87,7 @@ float32_t fir_output[ADC_SAMPLE_LENGTH];
 void adc_dsp_working(void)
 {
 
-	if((adc_ch[0].conv_end_flag == 1) &&(adc_ch[1].conv_end_flag == 1)&&(adc_ch[2].conv_end_flag == 1))
+	if((adc_ch[0].conv_end_flag == 1) && (adc_ch[1].conv_end_flag == 1) && (adc_ch[2].conv_end_flag == 1))
 	{	
 
 		adc_ch[0].conv_end_flag = 0;
@@ -94,7 +103,7 @@ void adc_dsp_working(void)
 		}
 		
 		/* 去除直流分量 */
-		remove_dc_part(adc_ch[0].adc_float_buf, &adc_ch[0].da_part, ADC_SAMPLE_LENGTH);
+		//remove_dc_part(adc_ch[0].adc_float_buf, &adc_ch[0].da_part, ADC_SAMPLE_LENGTH);
 		remove_dc_part(adc_ch[1].adc_float_buf, &adc_ch[1].da_part, ADC_SAMPLE_LENGTH);
 		remove_dc_part(adc_ch[2].adc_float_buf, &adc_ch[2].da_part, ADC_SAMPLE_LENGTH);
 
@@ -102,46 +111,109 @@ void adc_dsp_working(void)
 		inf_fft_with_mag_norm_f32(adc_ch[0].adc_float_buf, adc1_fft_input, adc1_fft_output, MAX_FFT_N);
 		inf_fft_with_mag_norm_f32(adc_ch[1].adc_float_buf, adc2_fft_input, adc2_fft_output, MAX_FFT_N);
 		inf_fft_with_mag_norm_f32(adc_ch[2].adc_float_buf, adc3_fft_input, adc3_fft_output, MAX_FFT_N);
+		R_OUT_DC = adc1_fft_output[0];
+		adc1_fft_output[0] = 0.0f; //去掉直流分量对后续计算的影响
+
+		
 		
 		arm_max_f32(adc1_fft_output,MAX_FFT_N/2,&pdata1,&pindex1);
 		arm_max_f32(adc2_fft_output,MAX_FFT_N/2,&pdata2,&pindex2);
 		arm_max_f32(adc3_fft_output,MAX_FFT_N/2,&pdata3,&pindex3);
 
+
+		
+		
+		//R_OUT = (7.4f/((pdata1+adc_ch[0].da_part)*ZOOM) -1)*R_OUT_f;   //输出电阻计算
+		//printf("Rin.txt=\"%f\"\xFF\xFF\xFF",R_OUT);
+
+		// for(int i =0;i<ADC_SAMPLE_LENGTH;i++)
+		// printf("%f,%f,%f,%f\n",adc_ch[1].adc_float_buf[i]*ZOOM,adc_ch[2].adc_float_buf[i]*ZOOM,pdata2,pdata3);
+
 	/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 	/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-	   if((FSK_mode == 1)&&(start_flag == 0))//扫频输出幅频特性曲线，ADC1是输入电压，ADC3是输出电压
-		{
-			freq2 = 819200*pindex2/4096;
-			if(freq2<=400000)
+	//    if(FSK_mode == 1)//扫频输出幅频特性曲线，ADC1是输入电压，ADC3是输出电压
+	// 	{
+	// 		if(start_flag == 0)
+	// 		{
+	// 			freq2 = 819200*pindex2/4096;
+	// 			if(freq2<=400000)
+	// 			{
+	// 				printf("%d\n",freq2);
+	// 				//freq_response[400000/freq2 - 1] = (pdata3/pdata1);  //频率对应的增益比值
+	// 			}
+	// 			else 
+	// 			{
+	// 				__NOP();
+	// 			}
+
+			
+	// 			start_flag = 1;
+	// 		}
+	// 		else
+	// 		{
+	// 			__NOP();
+	// 		}
+			
+	// 	}
+	// 	else //普通采样,电阻、增益的测量
+	// 	{
+			// //在进入这个函数之前已经把R_OUT_state翻转了
+			// if(R_OUT_state == 1) 			//此时这组数据是空载数据
+			// {
+			// 	U_source = ((pdata3+adc_ch[2].da_part)*ZOOM)*2.06;   //空载电压
+			// }
+			// else 
+			// {
+			// 	U_real =  ((pdata3+adc_ch[2].da_part)*ZOOM)*2.06;   //负载电压
+			// }
+			// R_OUT = (U_source/U_real - 1)*R_OUT_f;   //输出电阻计算
+		
+			U_source_reg  = (R_OUT_state==0) ?pdata1 : U_source_reg;  //空载电压
+
+			if(R_OUT_state==0)
+			{ 
+				R_OUT1_count++;
+				U_source = (pdata1*2+R_OUT_DC);  //空载电压
+				if(R_OUT1_count>=30)
+				{
+			      R_OUT1_count=0;
+				  R_OUT_state = 1;
+				  HAL_GPIO_WritePin(SWITCH_GPIO_Port,SWITCH_Pin,R_OUT_state);
+				}
+			}
+			else 
 			{
-				freq_response[400000/freq2 - 1] = (pdata3/pdata1);  //频率对应的增益比值
+
+				R_OUT2_count++;
+				U_real =  (pdata1*2+R_OUT_DC); 	//负载电压
+				if(R_OUT2_count>=30)
+				{
+			      R_OUT2_count=0;
+				  R_OUT_state = 0;
+				  HAL_GPIO_WritePin(SWITCH_GPIO_Port,SWITCH_Pin,R_OUT_state);
+				}
+				
+			}
+			if(U_source!=0&&U_real!=0)
+			{
+				R_OUT = (U_source/U_real - 1)*R_OUT_f;   //输出电阻计算
 			}
 			else 
 			{
 				__NOP();
 			}
+
+			R_IN = (pdata2)*R_IN_f/(pdata3-pdata2);   //输入电阻计算
+			U_ZOOM = ((U_source_reg*U_OUT_ZOOM))/((pdata2/U_IN_ZOOM));
 			
-	
-			start_flag = 1;
-		}
-		else //普通采样,电阻、增益的测量
-		{
-			//在进入这个函数之前已经把R_OUT_state翻转了
-			if(R_OUT_state == 1) 			//此时这组数据是空载数据
-			{
-				U_source = (pdata1*ZOOM);   //输入电压
-			}
-			else 
-			{
-				U_real = (pdata3*ZOOM);     //输出电压
-			}
-			R_OUT = (U_source/U_real - 1)*R_OUT_f;   //输出电阻计算
-
-
-
-			printf("%f,%f,%f\n",(pdata1*ZOOM),(pdata2*ZOOM),(pdata3*ZOOM));
+			printf("%f,%f,%f,%d\n",(U_source_reg*U_OUT_ZOOM),(pdata2/U_IN_ZOOM),U_ZOOM,R_OUT_state);
+			//printf("%f,%f,%f,%f,%f,%d\n",R_OUT,U_real,U_source,pdata1,R_OUT_DC,R_OUT_state);
+		
 			
-		}
+
+			
+			
+		//}
  }
 }
 
@@ -169,12 +241,12 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
 	if (hadc->Instance == ADC1) adc_ch[0].conv_end_flag = 1;
 	if (hadc->Instance == ADC2) adc_ch[1].conv_end_flag = 1;
-	if (hadc->Instance == ADC3) 
-	{
-		adc_ch[2].conv_end_flag = 1;
-		R_OUT_state = !R_OUT_state;//翻转，R_OUT_state=0是空载，R_OUT_state=1是带载
-		HAL_GPIO_WritePin(SWITCH_GPIO_Port,SWITCH_Pin,R_OUT_state);
-	}
+	if (hadc->Instance == ADC3) adc_ch[2].conv_end_flag = 1;
+	// {
+	// 	adc_ch[2].conv_end_flag = 1;
+	// 	R_OUT_state = !R_OUT_state;//翻转，R_OUT_state=0是空载，R_OUT_state=1是带载
+	// 	HAL_GPIO_WritePin(SWITCH_GPIO_Port,SWITCH_Pin,R_OUT_state);
+	// }
 
 	
 	

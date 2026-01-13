@@ -1,0 +1,96 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
+  <diagram name="第 1 页" id="j3DNhXIR-BXTEIo308fA">
+    <mxGraphModel dx="1425" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1920" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;模式&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="160" x="560" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="普通采样" vertex="1">
+          <mxGeometry height="60" width="120" x="200" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="扫频" vertex="1">
+          <mxGeometry height="60" width="120" x="570" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="故障判断" vertex="1">
+          <mxGeometry height="60" width="120" x="880" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="STATE=1&lt;div&gt;带负载&lt;/div&gt;&lt;div&gt;但是此时数据是空载&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="100" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-8" edge="1" parent="1" source="Kigj00Uaq0WK5niIVMoU-2" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="590" y="430" as="sourcePoint" />
+            <mxPoint x="290" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="0XEE0XFF" vertex="1">
+          <mxGeometry height="30" width="60" x="340" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-12" edge="1" parent="1" source="Kigj00Uaq0WK5niIVMoU-2" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.591;entryY=-0.018;entryDx=0;entryDy=0;entryPerimeter=0;" target="Kigj00Uaq0WK5niIVMoU-4" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="940" y="260" as="sourcePoint" />
+            <mxPoint x="670" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="0XCC0XDD" vertex="1">
+          <mxGeometry height="30" width="60" x="650" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="STATE=0&lt;div&gt;空载&lt;/div&gt;&lt;div&gt;但是此时数据是带负载&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="130" x="290" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-17" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.524;entryY=-0.076;entryDx=0;entryDy=0;entryPerimeter=0;" target="Kigj00Uaq0WK5niIVMoU-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="233" y="370" as="sourcePoint" />
+            <mxPoint x="640" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-18" edge="1" parent="1" source="Kigj00Uaq0WK5niIVMoU-3" style="endArrow=classic;html=1;rounded=0;exitX=0.697;exitY=1.062;exitDx=0;exitDy=0;exitPerimeter=0;" target="Kigj00Uaq0WK5niIVMoU-15" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="340" y="430" as="sourcePoint" />
+            <mxPoint x="310" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-20" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="629.66" y="370" as="sourcePoint" />
+            <mxPoint x="629.66" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-25" edge="1" parent="1" source="Kigj00Uaq0WK5niIVMoU-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="Kigj00Uaq0WK5niIVMoU-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;&quot;&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;FSK_mode=1&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="570" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-28" edge="1" parent="1" source="Kigj00Uaq0WK5niIVMoU-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630.1724137931037" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="freq&amp;lt;=400000" vertex="1">
+          <mxGeometry height="60" width="120" x="570" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-26" edge="1" parent="1" source="Kigj00Uaq0WK5niIVMoU-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="Kigj00Uaq0WK5niIVMoU-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="步进1k" vertex="1">
+          <mxGeometry height="30" width="60" x="720" y="625" as="geometry" />
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;color: rgb(156, 220, 254); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; white-space: pre; background-color: rgb(31, 31, 31);&quot;&gt;FSK_mode=0&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="570" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-30" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="570" y="640" as="sourcePoint" />
+            <mxPoint x="510" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kigj00Uaq0WK5niIVMoU-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="110" width="180" x="330" y="580" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
