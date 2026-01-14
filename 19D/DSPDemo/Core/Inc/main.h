@@ -61,12 +61,6 @@ void Error_Handler(void);
 #define AD9854_D1_GPIO_Port GPIOC
 #define AD9854_OSK_Pin GPIO_PIN_1
 #define AD9854_OSK_GPIO_Port GPIOA
-#define KEY1_Pin GPIO_PIN_2
-#define KEY1_GPIO_Port GPIOH
-#define KEY1_EXTI_IRQn EXTI2_IRQn
-#define KEY0_Pin GPIO_PIN_3
-#define KEY0_GPIO_Port GPIOH
-#define KEY0_EXTI_IRQn EXTI3_IRQn
 #define AD9854_D2_Pin GPIO_PIN_7
 #define AD9854_D2_GPIO_Port GPIOA
 #define AD9854_RD_Pin GPIO_PIN_4

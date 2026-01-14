@@ -313,7 +313,7 @@ void AD9854_SetSine(ulong Freq,uint Shape)
 	Adress = 0x04;                        //选择频率控制字地址的初值
 
 	Freq_convert(Freq);		           //频率转换
-	printf("%d\n",Freq);
+//	printf("%d\n",Freq);
 	for(count=6;count>0;)	          //写入6字节的频率控制字  
 	{
 		AD9854_WR_Byte(Adress++,FreqWord[--count]);

@@ -20,9 +20,8 @@
 /* Includes ------------------------------------------------------------------*/
 #include "usart.h"
 
-/* USER CODE BEGIN 0 */
 #include "stdio.h"
-
+/* USER CODE BEGIN 0 */
 FILE __stdout;       
 //定义_sys_exit()以避免使用半主机模式    
 void _sys_exit(int x) 
@@ -61,7 +60,7 @@ void MX_USART1_UART_Init(void)
 
   /* USER CODE END USART1_Init 1 */
   huart1.Instance = USART1;
-  huart1.Init.BaudRate = 1000000;
+  huart1.Init.BaudRate = 921600;
   huart1.Init.WordLength = UART_WORDLENGTH_8B;
   huart1.Init.StopBits = UART_STOPBITS_1;
   huart1.Init.Parity = UART_PARITY_NONE;
@@ -129,7 +128,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
     /* USART1 interrupt Init */
-    HAL_NVIC_SetPriority(USART1_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(USART1_IRQn, 2, 0);
     HAL_NVIC_EnableIRQ(USART1_IRQn);
   /* USER CODE BEGIN USART1_MspInit 1 */
 
@@ -182,7 +181,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 				{
 					USART_RX_BUF[USART_RX_STA&0X3FFF]=aRxBuffer[0] ;
 					USART_RX_STA++;
-					if(USART_RX_STA>(USART_REC_LEN-1))USART_RX_STA=0;//接收数66据错误,重新开始接收	  
+					if(USART_RX_STA>(USART_REC_LEN-1))USART_RX_STA=0;//接收数据错误,重新开始接收	  
 				}		 
 			}
 		}

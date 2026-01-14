@@ -96,12 +96,6 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : KEY1_Pin KEY0_Pin */
-  GPIO_InitStruct.Pin = KEY1_Pin|KEY0_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(GPIOH, &GPIO_InitStruct);
-
   /*Configure GPIO pin : PB0 */
   GPIO_InitStruct.Pin = GPIO_PIN_0;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -151,14 +145,8 @@ void MX_GPIO_Init(void)
   HAL_SYSCFG_AnalogSwitchConfig(SYSCFG_SWITCH_PA1, SYSCFG_SWITCH_PA1_CLOSE);
 
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI2_IRQn, 3, 0);
-  HAL_NVIC_EnableIRQ(EXTI2_IRQn);
-
-  HAL_NVIC_SetPriority(EXTI3_IRQn, 3, 0);
-  HAL_NVIC_EnableIRQ(EXTI3_IRQn);
-
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 1, 0);
- 
+  //HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 }
 

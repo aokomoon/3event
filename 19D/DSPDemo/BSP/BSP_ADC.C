@@ -9,6 +9,7 @@
 //----------- ADC -----------//
 volatile uint32_t sample_rate = ADC_SAMPLE_RATE;
 __attribute__((section (".RAM_SDRAM"))) ADC_def	adc_ch[3];
+__attribute__((section (".RAM_SDRAM"))) float32_t adc1_to_dc[ADC_SAMPLE_LENGTH];
 __attribute__((section (".RAM_SDRAM"))) float32_t dac_out_buf[ADC_SAMPLE_LENGTH];
 
 //----------- WINDOW -----------//
@@ -42,15 +43,18 @@ float32_t pdata1  =0;
 float32_t pdata2  =0;
 float32_t pdata3  =0;
 
+
+
 float32_t U_source;    //输出电压源的值
-float32_t U_source_reg;
+float32_t U_source_reg;//空载输出电压值
+float32_t U_in_reg;	   //空载输入电压的值
 float32_t U_real;      //负载电阻的值
 
 //电阻值
 #define R_IN_f   5000.0f		//输入电阻负载
 #define R_OUT_f  20000.0f		//输出电阻负载
-#define U_IN_ZOOM  5.75f     	//输入电压放大增益			
-#define U_OUT_ZOOM  2.63f     	//输出电压缩小增益	
+#define U_IN_ZOOM  10.0f     	//输入电压放大增益			
+#define U_OUT_ZOOM  3.0f     	//输出电压缩小增益	
 
 float32_t U_ZOOM;
 
@@ -64,7 +68,8 @@ float32_t R_OUT_DC;
 
 //扫频
 volatile uint8_t FSK_mode;
-float32_t freq_response[400];		//扫频对应的频幅特性
+
+float32_t freq_response[4000];		//扫频对应的频幅特性
 
 // fir
 float32_t fir_output[ADC_SAMPLE_LENGTH];
@@ -87,135 +92,200 @@ float32_t fir_output[ADC_SAMPLE_LENGTH];
 void adc_dsp_working(void)
 {
 
-	if((adc_ch[0].conv_end_flag == 1) && (adc_ch[1].conv_end_flag == 1) && (adc_ch[2].conv_end_flag == 1))
-	{	
+	// if((adc_ch[0].conv_end_flag == 1))//&& (adc_ch[1].conv_end_flag == 1) )//&& (adc_ch[2].conv_end_flag == 1))
+	// {	
+
+	// 	adc_ch[0].conv_end_flag = 0;
+	// 	//adc_ch[1].conv_end_flag = 0;
+	// 	//adc_ch[2].conv_end_flag = 0;
+		
+	// 	/* 将 ADC 采集到的整形数据提前转换为浮点数据存储 */
+	// 	for (uint32_t i = 0; i < ADC_SAMPLE_LENGTH; i ++) {
+	// 		adc_ch[0].adc_float_buf[i] = (float32_t)adc_ch[0].adc_buf[i];
+	// 		//adc_ch[1].adc_float_buf[i] = (float32_t)adc_ch[1].adc_buf[i];
+	// 		//adc_ch[2].adc_float_buf[i] = (float32_t)adc_ch[2].adc_buf[i];
+
+	// 	}
+		
+	// 	remove_dc_part(adc_ch[0].adc_float_buf, &adc_ch[0].da_part, ADC_SAMPLE_LENGTH);
+	// 	//remove_dc_part(adc_ch[1].adc_float_buf, &adc_ch[1].da_part, ADC_SAMPLE_LENGTH);
+	// 	//remove_dc_part(adc_ch[2].adc_float_buf, &adc_ch[2].da_part, ADC_SAMPLE_LENGTH);
+	// 	//去直流之后FFT变换，得出的有效值，就是电压交流时的有效值，但是在ADC3中的要加入直流分量
+	// 	inf_fft_with_mag_norm_f32(adc_ch[0].adc_float_buf, adc1_fft_input, adc1_fft_output, MAX_FFT_N);
+	// 	//inf_fft_with_mag_norm_f32(adc_ch[1].adc_float_buf, adc2_fft_input, adc2_fft_output, MAX_FFT_N);
+	// 	//inf_fft_with_mag_norm_f32(adc_ch[2].adc_float_buf, adc3_fft_input, adc3_fft_output, MAX_FFT_N);
+
+
+	// 	for(int i =0;i<ADC_SAMPLE_LENGTH;i++)
+	// 	{
+	// 		//dac_out_buf[i] = adc_ch[0].adc_float_buf[i];
+	// 		printf("%f\n",adc1_fft_output[i]);
+	// 		//printf("%f,%f,%f\n",adc3_fft_output[i],adc3_fft_output[i],adc3_fft_output[i]);
+	// 	}
+		
+	// 	// for(int i =0;i<ADC_SAMPLE_LENGTH;i++)
+	// 	// //printf("%f,%f,%f,%f\n",adc_ch[1].adc_float_buf[i]*ZOOM,adc_ch[2].adc_float_buf[i]*ZOOM,pdata2,pdata3);
+	// 	// printf("%f,%f\n",adc_ch[1].adc_float_buf[i]*ZOOM,adc_ch[2].adc_float_buf[i]*ZOOM);
+
+	/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+	/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+	   if(FSK_mode == 1)//扫频输出幅频特性曲线，ADC1是输入电压，ADC3是输出电压
+		{
+			
+		//printf("%d\n",adc_ch[0].conv_end_flag )	;
+	   if((adc_ch[0].conv_end_flag == 1))//&&(adc_ch[2].conv_end_flag == 1))
+	   {	
 
 		adc_ch[0].conv_end_flag = 0;
-		adc_ch[1].conv_end_flag = 0;
 		adc_ch[2].conv_end_flag = 0;
 		
 		/* 将 ADC 采集到的整形数据提前转换为浮点数据存储 */
 		for (uint32_t i = 0; i < ADC_SAMPLE_LENGTH; i ++) {
 			adc_ch[0].adc_float_buf[i] = (float32_t)adc_ch[0].adc_buf[i];
-			adc_ch[1].adc_float_buf[i] = (float32_t)adc_ch[1].adc_buf[i];
 			adc_ch[2].adc_float_buf[i] = (float32_t)adc_ch[2].adc_buf[i];
-
 		}
 		
-		/* 去除直流分量 */
-		//remove_dc_part(adc_ch[0].adc_float_buf, &adc_ch[0].da_part, ADC_SAMPLE_LENGTH);
-		remove_dc_part(adc_ch[1].adc_float_buf, &adc_ch[1].da_part, ADC_SAMPLE_LENGTH);
-		remove_dc_part(adc_ch[2].adc_float_buf, &adc_ch[2].da_part, ADC_SAMPLE_LENGTH);
-
-		//去直流之后FFT变换，得出的有效值，就是电压交流时的有效值，但是在ADC3中的要加入直流分量
-		inf_fft_with_mag_norm_f32(adc_ch[0].adc_float_buf, adc1_fft_input, adc1_fft_output, MAX_FFT_N);
-		inf_fft_with_mag_norm_f32(adc_ch[1].adc_float_buf, adc2_fft_input, adc2_fft_output, MAX_FFT_N);
-		inf_fft_with_mag_norm_f32(adc_ch[2].adc_float_buf, adc3_fft_input, adc3_fft_output, MAX_FFT_N);
-		R_OUT_DC = adc1_fft_output[0];
-		adc1_fft_output[0] = 0.0f; //去掉直流分量对后续计算的影响
-
-		
-		
-		arm_max_f32(adc1_fft_output,MAX_FFT_N/2,&pdata1,&pindex1);
-		arm_max_f32(adc2_fft_output,MAX_FFT_N/2,&pdata2,&pindex2);
-		arm_max_f32(adc3_fft_output,MAX_FFT_N/2,&pdata3,&pindex3);
+		    remove_dc_part(adc_ch[0].adc_float_buf, &adc_ch[0].da_part, ADC_SAMPLE_LENGTH);
+			remove_dc_part(adc_ch[2].adc_float_buf, &adc_ch[2].da_part, ADC_SAMPLE_LENGTH);
 
 
-		
-		
-		//R_OUT = (7.4f/((pdata1+adc_ch[0].da_part)*ZOOM) -1)*R_OUT_f;   //输出电阻计算
-		//printf("Rin.txt=\"%f\"\xFF\xFF\xFF",R_OUT);
+		    inf_fft_with_mag_norm_f32(adc_ch[0].adc_float_buf, adc1_fft_input, adc1_fft_output, MAX_FFT_N);
+			inf_fft_with_mag_norm_f32(adc_ch[2].adc_float_buf, adc3_fft_input, adc3_fft_output, MAX_FFT_N);
 
-		// for(int i =0;i<ADC_SAMPLE_LENGTH;i++)
-		// printf("%f,%f,%f,%f\n",adc_ch[1].adc_float_buf[i]*ZOOM,adc_ch[2].adc_float_buf[i]*ZOOM,pdata2,pdata3);
+			arm_max_f32(adc1_fft_output,MAX_FFT_N/2,&pdata1,&pindex1);
+			arm_max_f32(adc3_fft_output,MAX_FFT_N/2,&pdata3,&pindex3);
+			freq2 = 819200*pindex1/4096;
 
-	/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-	/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-	//    if(FSK_mode == 1)//扫频输出幅频特性曲线，ADC1是输入电压，ADC3是输出电压
-	// 	{
-	// 		if(start_flag == 0)
-	// 		{
-	// 			freq2 = 819200*pindex2/4096;
-	// 			if(freq2<=400000)
-	// 			{
-	// 				printf("%d\n",freq2);
-	// 				//freq_response[400000/freq2 - 1] = (pdata3/pdata1);  //频率对应的增益比值
-	// 			}
-	// 			else 
-	// 			{
-	// 				__NOP();
-	// 			}
-
+			//float32_t zoom_new = ((pdata1*U_OUT_ZOOM)/(pdata3/U_IN_ZOOM));
+			freq_response[freq2/1000] = ((pdata1*U_OUT_ZOOM)/(pdata3/U_IN_ZOOM));
 			
-	// 			start_flag = 1;
-	// 		}
-	// 		else
-	// 		{
-	// 			__NOP();
-	// 		}
-			
-	// 	}
-	// 	else //普通采样,电阻、增益的测量
-	// 	{
-			// //在进入这个函数之前已经把R_OUT_state翻转了
-			// if(R_OUT_state == 1) 			//此时这组数据是空载数据
-			// {
-			// 	U_source = ((pdata3+adc_ch[2].da_part)*ZOOM)*2.06;   //空载电压
-			// }
-			// else 
-			// {
-			// 	U_real =  ((pdata3+adc_ch[2].da_part)*ZOOM)*2.06;   //负载电压
-			// }
-			// R_OUT = (U_source/U_real - 1)*R_OUT_f;   //输出电阻计算
-		
-			U_source_reg  = (R_OUT_state==0) ?pdata1 : U_source_reg;  //空载电压
+			if(start_flag == 0)
+			{
+				
+				if(freq2<380000)
+				{
+				   
+					
+					printf("add 1,0,%d\xFF\xFF\xFF",(int)(freq_response[freq2/1000]));
 
+					//printf("%f,%f,%f,%d\n",,(pdata1*U_OUT_ZOOM),(pdata3/U_IN_ZOOM),freq2);
+					//printf("%f,%f,%d\n",(pdata2/U_IN_ZOOM),(pdata3/U_IN_ZOOM),freq2);
+				}
+				else if(freq2>=380000)
+				{
+					float32_t U_data;
+					int U_index;
+					arm_max_f32(freq_response,400,&U_data,(uint32_t*)U_index);
+					for(int i=0;i<400;i++)
+					{
+						if(freq_response[i] >= (U_data*0.707-3.0f)&& freq_response[i] <= (U_data*0.707+3.0f))
+						{
+							printf("freqH.txt=\"%d\"\xFF\xFF\xFF\n",i*1000);
+							break;
+						}
+					}
+				}
+				
+				start_flag = 1;
+			}
+		
+		}
+		}
+		else
+		{
+			if((adc_ch[0].conv_end_flag == 1)&& (adc_ch[1].conv_end_flag == 1) && (adc_ch[2].conv_end_flag == 1))
+			{
+				adc_ch[1].conv_end_flag = 0;
+				adc_ch[1].conv_end_flag = 0;
+				adc_ch[2].conv_end_flag = 0;
+				//printf("%d\n",FSK_mode )	;
+
+				/* 将 ADC 采集到的整形数据提前转换为浮点数据存储 */
+				for (uint32_t i = 0; i < ADC_SAMPLE_LENGTH; i ++) {
+					adc_ch[0].adc_float_buf[i] = (float32_t)adc_ch[0].adc_buf[i];
+					adc_ch[1].adc_float_buf[i] = (float32_t)adc_ch[1].adc_buf[i];
+					adc_ch[2].adc_float_buf[i] = (float32_t)adc_ch[2].adc_buf[i];
+				
+				}
+
+				//remove_dc_part(adc_ch[0].adc_float_buf, &adc_ch[0].da_part, ADC_SAMPLE_LENGTH);
+				remove_dc_part(adc_ch[1].adc_float_buf, &adc_ch[1].da_part, ADC_SAMPLE_LENGTH);
+				remove_dc_part(adc_ch[2].adc_float_buf, &adc_ch[2].da_part, ADC_SAMPLE_LENGTH);
+
+				//去直流之后FFT变换，得出的有效值，就是电压交流时的有效值，但是在ADC3中的要加入直流分量
+				inf_fft_with_mag_norm_f32(adc_ch[0].adc_float_buf, adc1_fft_input, adc1_fft_output, MAX_FFT_N);
+				inf_fft_with_mag_norm_f32(adc_ch[1].adc_float_buf, adc2_fft_input, adc2_fft_output, MAX_FFT_N);
+				inf_fft_with_mag_norm_f32(adc_ch[2].adc_float_buf, adc3_fft_input, adc3_fft_output, MAX_FFT_N);
+
+				R_OUT_DC = adc1_fft_output[0];
+				adc1_fft_output[0] = 0;
+
+				
+
+			arm_max_f32(adc1_fft_output,MAX_FFT_N/2,&pdata1,&pindex1);
+			arm_max_f32(adc2_fft_output,MAX_FFT_N/2,&pdata2,&pindex2);
+			arm_max_f32(adc3_fft_output,MAX_FFT_N/2,&pdata3,&pindex3);
+
+
+
+
+
+			U_source_reg  = (R_OUT_state==0) ?pdata1 : U_source_reg;  //空载输出电压
+			U_in_reg      = (R_OUT_state==0) ?pdata3 : U_in_reg;      //空载输入电压
+			
 			if(R_OUT_state==0)
 			{ 
 				R_OUT1_count++;
-				U_source = (pdata1*2+R_OUT_DC);  //空载电压
-				if(R_OUT1_count>=30)
+				
+				if(R_OUT1_count>=20)
 				{
 			      R_OUT1_count=0;
 				  R_OUT_state = 1;
 				  HAL_GPIO_WritePin(SWITCH_GPIO_Port,SWITCH_Pin,R_OUT_state);
+				}
+				else  if(R_OUT1_count==10)
+				{
+					U_source = (pdata1*2+R_OUT_DC);  //空载电压
 				}
 			}
 			else 
 			{
 
 				R_OUT2_count++;
-				U_real =  (pdata1*2+R_OUT_DC); 	//负载电压
-				if(R_OUT2_count>=30)
+				
+				if(R_OUT2_count>=20)
 				{
 			      R_OUT2_count=0;
 				  R_OUT_state = 0;
 				  HAL_GPIO_WritePin(SWITCH_GPIO_Port,SWITCH_Pin,R_OUT_state);
 				}
+				else  if(R_OUT2_count==10)
+				{
+					U_real =  (pdata1*2+R_OUT_DC); 	//负载电压
+				}
 				
 			}
 			if(U_source!=0&&U_real!=0)
 			{
-				R_OUT = (U_source/U_real - 1)*R_OUT_f;   //输出电阻计算
-			}
-			else 
-			{
-				__NOP();
+				R_OUT = (U_source/U_real  - 0.985)*R_OUT_f;   //输出电阻计算
 			}
 
-			R_IN = (pdata2)*R_IN_f/(pdata3-pdata2);   //输入电阻计算
-			U_ZOOM = ((U_source_reg*U_OUT_ZOOM))/((pdata2/U_IN_ZOOM));
+
+			R_IN = (pdata3)*R_IN_f/(pdata2-pdata3);   //输入电阻计算
+			U_ZOOM = ((U_source_reg*U_OUT_ZOOM))/((U_in_reg/U_IN_ZOOM));
 			
-			printf("%f,%f,%f,%d\n",(U_source_reg*U_OUT_ZOOM),(pdata2/U_IN_ZOOM),U_ZOOM,R_OUT_state);
-			//printf("%f,%f,%f,%f,%f,%d\n",R_OUT,U_real,U_source,pdata1,R_OUT_DC,R_OUT_state);
+			
+			//printf("%f,%f,%f,%d\n",R_OUT,R_IN,U_ZOOM,FSK_mode);
+
+			printf("Rout.txt=\"%.2f\"\xFF\xFF\xFF",R_OUT);
+			printf("Rin.txt=\"%.2f\"\xFF\xFF\xFF",R_IN);
+			printf("U.txt=\"%.2f\"\xFF\xFF\xFF",U_ZOOM);
+
+		}
+    }
 		
-			
-
-			
-			
-		//}
  }
-}
+//}
 
 	// 第一版方案没有考虑实际
 			// 所以实际上要除以根号二

@@ -57,6 +57,8 @@
 volatile uint8_t key = 0;
 
 
+
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -66,28 +68,7 @@ static void MPU_Config(void);
 /* USER CODE BEGIN PFP */
 
 
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)  // 重写中断回调函数
-{
- 
-  if (GPIO_Pin == KEY0_Pin)
-  {
-    // 消抖延时
-    HAL_Delay(10);
-    if (HAL_GPIO_ReadPin(KEY0_GPIO_Port, KEY0_Pin) == GPIO_PIN_RESET)
-    {
-      key = 1;
-    }   
-  }
-  else if (GPIO_Pin == KEY1_Pin)
-  {
-    // 消抖延时
-    HAL_Delay(10);
-    if (HAL_GPIO_ReadPin(KEY1_GPIO_Port, KEY1_Pin) == GPIO_PIN_RESET)
-    {
-      key = 2;
-    }   
-  }
-}
+
 
 /* USER CODE END PFP */
 
@@ -149,14 +130,15 @@ int main(void)
   MX_ADC3_Init();
   MX_FMC_Init();
   /* USER CODE BEGIN 2 */
-  simply409_6khz();    //采样时钟
+  simply819_2khz();    //采样时钟
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);//先准备时钟再使能中断
 	adc_init();
  
    freq =1000;
+    FSK_mode = 0;
    R_OUT_state = 1;    //初始状态，继电器断开
    HAL_GPIO_WritePin(SWITCH_GPIO_Port,SWITCH_Pin,R_OUT_state);//低电平断开，负载电压，继电器接口
-   AD9854_InitSingle();
+  AD9854_InitSingle();
    AD9854_SetSine(1000,4095); //初始化1khz正弦波，幅值大约是220MVpp
   /* USER CODE END 2 */
 
@@ -165,54 +147,68 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-   // printf("1111");
+
     /* USER CODE BEGIN 3 */
     
-      //  if(USART_RX_STA&0x8000)
-      // {
-      //   len=USART_RX_STA&0x3fff;//得到此次接收到的数据长度，具体可以看看源码，非常有意思
-      //   //uint16_t*p = (uint16_t*)USART_RX_BUF;
-      //   if(USART_RX_BUF[0] == 0xEE && USART_RX_BUF[1] == 0xFF)  //普通判断模式
-      //   {
-      //       FSK_mode = 0;
-      //   }
-      //   else if(USART_RX_BUF[0] == 0xCC && USART_RX_BUF[1] == 0xDD)//扫频模式
-      //   {
-      //       FSK_mode = 1;
-      //   }
-			//   USART_RX_STA=0;
-      // }
-      // else
-      // {
-      //    __NOP();//这部分也很要必要，否则会进不来判断，这部分就相当于空
-      // }
+       if(USART_RX_STA&0x8000)
+      {
+        len=USART_RX_STA&0x3fff;//得到此次接收到的数据长度，具体可以看看源码，非常有意思
+        //uint16_t*p = (uint16_t*)USART_RX_BUF;
+         //HAL_UART_Transmit(&huart1,USART_RX_BUF,,1000);
+        // printf("%d,%d\n",USART_RX_BUF[0],USART_RX_BUF[1]);
+        //printf("%d\n",USART_RX_BUF[0],USART_RX_BUF[1]);
+        if(USART_RX_BUF[0] == 0xEE && USART_RX_BUF[1] == 0xFF)  //普通判断模式
+        {
+            FSK_mode = 0;
+        }
+        else if(USART_RX_BUF[0] == 0xCC && USART_RX_BUF[1] == 0xDD)//扫频模式
+        {
+            //printf("%d,%d\n",USART_RX_BUF[0],USART_RX_BUF[1]);
+            
+            FSK_mode = 1;
+            //printf("%d\n",FSK_mode);
+            R_OUT_state = 0;
+            freq = 0;
+           // printf("%d\n",FSK_mode);
+		       	HAL_GPIO_WritePin(SWITCH_GPIO_Port,SWITCH_Pin,R_OUT_state);//低电平断开，负载电压，继电器接口
+        }
+			  USART_RX_STA=0;
+      }
+      else
+      {
+         __NOP();//这部分也很要必要，否则会进不来判断，这部分就相当于空
+      }
       
-    // if(start_flag == 1 && (FSK_mode == 1))//扫频   1000-500k,步进100hz
-    // { 
-    //   freq = freq + 1000;
-    //   AD9854_SetSine(freq,4095);
-    //   if(freq>400000)
-    //   {
-    //      freq = 1000;
-    //      AD9854_SetSine(freq,4095);
-    //      FSK_mode = 0;
-    //      start_flag = 1;
-    //      break;
-    //   }
-    //   else 
-    //   {
-    //     __NOP();
-    //   }
-    //   start_flag = 0;
-    // }
-    // else if((FSK_mode == 0))
-    // {
-    //   freq = 1000;
-    // }
-    // else 
-    // {
-    //   __nop();
-    // }
+    if(start_flag == 1 && (FSK_mode == 1))//扫频   1000-500k,步进100hz
+    { 
+      
+      AD9854_SetSine(freq,4095);
+      if(freq>400000)
+      {
+         freq = 400000;
+         AD9854_SetSine(freq,4095);   
+      }
+      else  if(freq==400000)
+      {
+
+         freq = 1000;
+         AD9854_SetSine(freq,4095);
+         FSK_mode = 0;
+         start_flag = 1;
+      }
+      else
+      {
+        freq = freq + 1000;
+      }
+       
+       start_flag = 0;
+    }
+    else if((FSK_mode == 0))
+    {
+      freq = 1000;
+    }
+   
+   
     adc_dsp_working();
 	
   }
