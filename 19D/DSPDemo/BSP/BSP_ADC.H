@@ -31,8 +31,9 @@ typedef struct
 extern volatile uint32_t sample_rate;	/* 采样率 */
 extern   uint8_t start_flag ;
 extern volatile uint8_t FSK_mode;
+extern volatile uint8_t power_mode;
 extern ADC_def adc_ch[3];
-
+extern uint16_t RE_CT_state;
 
 void adc_init(void);
 void  adc_dsp_working(void);

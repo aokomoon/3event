@@ -44,30 +44,46 @@ float32_t pdata2  =0;
 float32_t pdata3  =0;
 
 
-
+//基础部分
 float32_t U_source;    //输出电压源的值
 float32_t U_source_reg;//空载输出电压值
 float32_t U_in_reg;	   //空载输入电压的值
 float32_t U_real;      //负载电阻的值
 
+//进阶部分
+float32_t U_DC_reg;    //空载输出电压直流记录量    记录的是频率为1K时的值
+float32_t U_AC_reg;	   //空载输出电压交流记录量
+uint32_t  freq_new;    //新的频率值
+float32_t U_DC_new;
+uint16_t  ele_state;   //电路目前状态
+volatile uint16_t  re_flag = 0;     //状态混叠改变输入条件重新判断标志位
+uint16_t RE_CT_state;  //输入信号幅值标志位   0：25mv     1：300mv
+
+
+
+
 //电阻值
 #define R_IN_f   5000.0f		//输入电阻负载
 #define R_OUT_f  20000.0f		//输出电阻负载
 #define U_IN_ZOOM  10.0f     	//输入电压放大增益			
-#define U_OUT_ZOOM  3.0f     	//输出电压缩小增益	
+#define U_OUT_ZOOM  4.35f     	//输出电压缩小增益	
 
 float32_t U_ZOOM;
 
 
 float32_t R_IN;	     //输入电阻
 float32_t R_OUT;	 //输出电阻
+float32_t R_IN_reg;	     //输入电阻缓存
+float32_t R_OUT_reg;	 //输出电阻缓存
+
 
 static int R_OUT1_count = 0;
 static int R_OUT2_count = 0;
 float32_t R_OUT_DC;
 
 //扫频
-volatile uint8_t FSK_mode;
+volatile uint8_t FSK_mode;  //扫频模式
+volatile uint8_t power_mode;//故障模式
 
 float32_t freq_response[4000];		//扫频对应的频幅特性
 
@@ -86,50 +102,20 @@ float32_t fir_output[ADC_SAMPLE_LENGTH];
 //直流和交流的缩放倍数2.95，原来的直流7.04，衰减后的直流2.38      交流峰峰值：3.28V   衰减后：1.10v	
 
 
+
+
+//实际判断较长，有待优化
+
 /**
  * @brief ADC数字数据处理函数
  */
 void adc_dsp_working(void)
 {
 
-	// if((adc_ch[0].conv_end_flag == 1))//&& (adc_ch[1].conv_end_flag == 1) )//&& (adc_ch[2].conv_end_flag == 1))
-	// {	
-
-	// 	adc_ch[0].conv_end_flag = 0;
-	// 	//adc_ch[1].conv_end_flag = 0;
-	// 	//adc_ch[2].conv_end_flag = 0;
-		
-	// 	/* 将 ADC 采集到的整形数据提前转换为浮点数据存储 */
-	// 	for (uint32_t i = 0; i < ADC_SAMPLE_LENGTH; i ++) {
-	// 		adc_ch[0].adc_float_buf[i] = (float32_t)adc_ch[0].adc_buf[i];
-	// 		//adc_ch[1].adc_float_buf[i] = (float32_t)adc_ch[1].adc_buf[i];
-	// 		//adc_ch[2].adc_float_buf[i] = (float32_t)adc_ch[2].adc_buf[i];
-
-	// 	}
-		
-	// 	remove_dc_part(adc_ch[0].adc_float_buf, &adc_ch[0].da_part, ADC_SAMPLE_LENGTH);
-	// 	//remove_dc_part(adc_ch[1].adc_float_buf, &adc_ch[1].da_part, ADC_SAMPLE_LENGTH);
-	// 	//remove_dc_part(adc_ch[2].adc_float_buf, &adc_ch[2].da_part, ADC_SAMPLE_LENGTH);
-	// 	//去直流之后FFT变换，得出的有效值，就是电压交流时的有效值，但是在ADC3中的要加入直流分量
-	// 	inf_fft_with_mag_norm_f32(adc_ch[0].adc_float_buf, adc1_fft_input, adc1_fft_output, MAX_FFT_N);
-	// 	//inf_fft_with_mag_norm_f32(adc_ch[1].adc_float_buf, adc2_fft_input, adc2_fft_output, MAX_FFT_N);
-	// 	//inf_fft_with_mag_norm_f32(adc_ch[2].adc_float_buf, adc3_fft_input, adc3_fft_output, MAX_FFT_N);
-
-
-	// 	for(int i =0;i<ADC_SAMPLE_LENGTH;i++)
-	// 	{
-	// 		//dac_out_buf[i] = adc_ch[0].adc_float_buf[i];
-	// 		printf("%f\n",adc1_fft_output[i]);
-	// 		//printf("%f,%f,%f\n",adc3_fft_output[i],adc3_fft_output[i],adc3_fft_output[i]);
-	// 	}
-		
-	// 	// for(int i =0;i<ADC_SAMPLE_LENGTH;i++)
-	// 	// //printf("%f,%f,%f,%f\n",adc_ch[1].adc_float_buf[i]*ZOOM,adc_ch[2].adc_float_buf[i]*ZOOM,pdata2,pdata3);
-	// 	// printf("%f,%f\n",adc_ch[1].adc_float_buf[i]*ZOOM,adc_ch[2].adc_float_buf[i]*ZOOM);
 
 	/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 	/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-	   if(FSK_mode == 1)//扫频输出幅频特性曲线，ADC1是输入电压，ADC3是输出电压
+	    if(FSK_mode == 1)//扫频输出幅频特性曲线，ADC1是输入电压，ADC3是输出电压
 		{
 			
 		//printf("%d\n",adc_ch[0].conv_end_flag )	;
@@ -164,8 +150,6 @@ void adc_dsp_working(void)
 				
 				if(freq2<380000)
 				{
-				   
-					
 					printf("add 1,0,%d\xFF\xFF\xFF",(int)(freq_response[freq2/1000]));
 
 					//printf("%f,%f,%f,%d\n",,(pdata1*U_OUT_ZOOM),(pdata3/U_IN_ZOOM),freq2);
@@ -222,28 +206,28 @@ void adc_dsp_working(void)
 
 				
 
-			arm_max_f32(adc1_fft_output,MAX_FFT_N/2,&pdata1,&pindex1);
-			arm_max_f32(adc2_fft_output,MAX_FFT_N/2,&pdata2,&pindex2);
-			arm_max_f32(adc3_fft_output,MAX_FFT_N/2,&pdata3,&pindex3);
+			    arm_max_f32(adc1_fft_output,MAX_FFT_N/2,&pdata1,&pindex1);
+			    arm_max_f32(adc2_fft_output,MAX_FFT_N/2,&pdata2,&pindex2);
+			    arm_max_f32(adc3_fft_output,MAX_FFT_N/2,&pdata3,&pindex3);
 
 
 
 
 
-			U_source_reg  = (R_OUT_state==0) ?pdata1 : U_source_reg;  //空载输出电压
-			U_in_reg      = (R_OUT_state==0) ?pdata3 : U_in_reg;      //空载输入电压
+			    U_source_reg  = (R_OUT_state==0) ?pdata1 : U_source_reg;  //空载输出电压
+			    U_in_reg      = (R_OUT_state==0) ?pdata3 : U_in_reg;      //空载输入电压
 			
-			if(R_OUT_state==0)
+			if(R_OUT_state==0)				
 			{ 
 				R_OUT1_count++;
 				
-				if(R_OUT1_count>=20)
+				if(R_OUT1_count>=4)
 				{
 			      R_OUT1_count=0;
 				  R_OUT_state = 1;
 				  HAL_GPIO_WritePin(SWITCH_GPIO_Port,SWITCH_Pin,R_OUT_state);
 				}
-				else  if(R_OUT1_count==10)
+				else  if(R_OUT1_count==2)
 				{
 					U_source = (pdata1*2+R_OUT_DC);  //空载电压
 				}
@@ -253,19 +237,19 @@ void adc_dsp_working(void)
 
 				R_OUT2_count++;
 				
-				if(R_OUT2_count>=20)
+				if(R_OUT2_count>=4)
 				{
 			      R_OUT2_count=0;
 				  R_OUT_state = 0;
 				  HAL_GPIO_WritePin(SWITCH_GPIO_Port,SWITCH_Pin,R_OUT_state);
 				}
-				else  if(R_OUT2_count==10)
+				else  if(R_OUT2_count==2)
 				{
-					U_real =  (pdata1*2+R_OUT_DC); 	//负载电压
+					U_real = (pdata1*2+R_OUT_DC); 	//负载电压
 				}
 				
 			}
-			if(U_source!=0&&U_real!=0)
+			if(U_source!=0&&U_real!=0&&(U_source>U_real))
 			{
 				R_OUT = (U_source/U_real  - 0.985)*R_OUT_f;   //输出电阻计算
 			}
@@ -277,9 +261,110 @@ void adc_dsp_working(void)
 			
 			//printf("%f,%f,%f,%d\n",R_OUT,R_IN,U_ZOOM,FSK_mode);
 
-			printf("Rout.txt=\"%.2f\"\xFF\xFF\xFF",R_OUT);
-			printf("Rin.txt=\"%.2f\"\xFF\xFF\xFF",R_IN);
-			printf("U.txt=\"%.2f\"\xFF\xFF\xFF",U_ZOOM);
+			if(power_mode == 0)				//故障模式判断
+			{
+				R_OUT_reg =R_OUT;  
+				R_IN_reg = R_IN;   
+				U_AC_reg = pdata1*U_OUT_ZOOM;
+			    U_DC_reg = R_OUT_DC;
+				printf("Rout.txt=\"%.2f\"\xFF\xFF\xFF",R_OUT);
+			    printf("Rin.txt=\"%.2f\"\xFF\xFF\xFF",R_IN);
+			    printf("U.txt=\"%.2f\"\xFF\xFF\xFF",U_ZOOM);
+				
+				//printf("%f,%f\n",R_OUT_DC,pdata1);
+
+
+			}
+			else 
+		    {
+			  //R1的情况    开路：交流分量为0，直流分量为电源电压    
+			  //R2的情况    开路：交流信号为0.9，直流分量为4.1的直流分量
+			  //R3的情况    开路：交流信号为0， 直流分量也近乎为0
+			  //R4的情况    开路：交流信号为微小，直流分量近乎为大
+			  //float32_t U_DC_reg;    //空载输出电压直流记录量    记录的是频率为1K时的值
+              //float32_t U_AC_reg;	   //空载输出电压交流记录量
+              //uint32_t  freq_new;    //新的频率值
+              //float32_t U_DC_new;
+              //uint16_t ele_state;   //电路目前状态s
+			
+			  //判断R的情况应该是基于输出电阻和输入电阻的情况来判断
+			  //条件找区别其他比较显著的判断，尽量条件少一点
+			  if(re_flag == 0)			//重新调整条件判断标志位
+			  {
+				if(R_IN > (R_IN_reg*3))    ele_state = 1; 		//R1开路，电阻大概为15000+，实际上的电压也是趋近于直流电压，后续有输入电阻相近的做第二个判断条件
+			    else if((R_OUT_DC >(U_DC_reg*0.5))&&(R_OUT_DC<(U_DC_reg))&&(pdata1 < 0.03))  ele_state = 2; //R2开路
+			  //else if((R_OUT_DC<(U_DC_reg*0.5))&&(pdata1 < 0.04))  ele_state = 3;  //R3开路
+			    else if((R_IN > (R_IN_reg*2))&& (R_IN < (R_IN_reg*3))) ele_state = 4; //R4开路
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+			    else if((R_OUT_DC>(3))&&(pdata1 < 0.04)&&(R_OUT<(R_OUT_reg*0.21))&&((R_IN<(R_IN_reg*0.5)))) ele_state = 5; //R1短路
+			    else if((R_OUT_DC<3.0f)&&(R_OUT_DC>(U_DC_reg)&&(R_IN<(R_IN_reg*0.21)))) ele_state = 6;//R2短路
+			    else if((R_OUT_DC>(3))&&((R_IN>R_IN_reg*0.85)&&(R_IN<R_IN_reg*1.15))) ele_state = 7; //R3短路
+			 // else if((R_OUT_DC<(U_DC_reg*0.5))&&((pdata1 < 0.04))&&(R_IN<(R_IN_reg*0.16))&&(R_OUT<(R_OUT_reg*0.5))) ele_state = 8;         //R4短路
+			    else 
+			     {
+			   		if((R_OUT_DC<(U_DC_reg*0.5))&&(pdata1 < 0.04)&&(R_IN<(R_IN_reg*0.16))&&(R_OUT<(R_OUT_reg*0.5)))//3、8区别判断，需要调整输入幅值
+			   		{
+			   			re_flag = 1;
+						RE_CT_state = 1;
+						power_mode  = 1;
+						HAL_GPIO_WritePin(RE_CT_GPIO_Port,RE_CT_Pin,RE_CT_state);			//当前状态设置，1：500mv；2：25mv
+
+			   		}
+			   		else 
+			   		{
+			   	        ele_state = 0; 
+			   		}
+			    }
+			  }
+			  else 
+			  {
+				static uint8_t RE_ct_count = 0;	//	由于在开关时会有不稳定状态，所以取稳定时的状态作为判断标准
+				if(RE_ct_count <= 3)			//等到稳定之后在判断
+				{
+					RE_ct_count ++;
+					if(RE_ct_count == 1)
+					{
+						//判断条件
+						float32_t pdata_re;
+						uint16_t index_re;
+						//两者在输出幅值有较大变化，3：依然较小，8：由于饱和幅值有个尖峰
+						//3：R3开路       8：R4短路
+						arm_max_f32(adc_ch[0].adc_float_buf,4096,&pdata_re,&index_re);
+						if(pdata_re >2.4&&pdata_re<3)
+						{
+							ele_state = 8;
+						}
+						else  if(pdata_re >0&&pdata_re<0.3)
+						{
+							ele_state = 3;
+						}
+						else
+						{
+							ele_state = 0;
+						}
+
+					}
+					else if(RE_ct_count == 3)
+					{
+						RE_ct_count = 0;
+						power_mode  = 0;
+					} 
+				}
+				
+			  }
+			  
+
+			  
+			 
+			 
+			 
+			  
+
+			  //printf("%d,%f,%f,%f,%f\n",ele_state,R_OUT_DC,pdata1,R_OUT,R_IN);
+			}
+			
 
 		}
     }
@@ -312,13 +397,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 	if (hadc->Instance == ADC1) adc_ch[0].conv_end_flag = 1;
 	if (hadc->Instance == ADC2) adc_ch[1].conv_end_flag = 1;
 	if (hadc->Instance == ADC3) adc_ch[2].conv_end_flag = 1;
-	// {
-	// 	adc_ch[2].conv_end_flag = 1;
-	// 	R_OUT_state = !R_OUT_state;//翻转，R_OUT_state=0是空载，R_OUT_state=1是带载
-	// 	HAL_GPIO_WritePin(SWITCH_GPIO_Port,SWITCH_Pin,R_OUT_state);
-	// }
 
-	
 	
 }
 

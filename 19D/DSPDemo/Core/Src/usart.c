@@ -20,8 +20,8 @@
 /* Includes ------------------------------------------------------------------*/
 #include "usart.h"
 
-#include "stdio.h"
 /* USER CODE BEGIN 0 */
+#include "stdio.h"
 FILE __stdout;       
 //定义_sys_exit()以避免使用半主机模式    
 void _sys_exit(int x) 
@@ -60,7 +60,7 @@ void MX_USART1_UART_Init(void)
 
   /* USER CODE END USART1_Init 1 */
   huart1.Instance = USART1;
-  huart1.Init.BaudRate = 921600;
+  huart1.Init.BaudRate = 961200;
   huart1.Init.WordLength = UART_WORDLENGTH_8B;
   huart1.Init.StopBits = UART_STOPBITS_1;
   huart1.Init.Parity = UART_PARITY_NONE;
@@ -128,7 +128,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
     /* USART1 interrupt Init */
-    HAL_NVIC_SetPriority(USART1_IRQn, 2, 0);
+    HAL_NVIC_SetPriority(USART1_IRQn, 0, 0);
     HAL_NVIC_EnableIRQ(USART1_IRQn);
   /* USER CODE BEGIN USART1_MspInit 1 */
 

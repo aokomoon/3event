@@ -58,6 +58,9 @@ void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(RE_CT_GPIO_Port, RE_CT_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOC, AD9854_D1_Pin|AD9854_RD_Pin|AD9854_D3_Pin|SWITCH_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
@@ -81,6 +84,13 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOI, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : RE_CT_Pin */
+  GPIO_InitStruct.Pin = RE_CT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  HAL_GPIO_Init(RE_CT_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : AD9854_D1_Pin AD9854_RD_Pin AD9854_D3_Pin */
   GPIO_InitStruct.Pin = AD9854_D1_Pin|AD9854_RD_Pin|AD9854_D3_Pin;
@@ -146,7 +156,7 @@ void MX_GPIO_Init(void)
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 1, 0);
-  //HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+ // HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 }
 
