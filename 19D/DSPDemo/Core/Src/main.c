@@ -144,7 +144,7 @@ int main(void)
    HAL_GPIO_WritePin(RE_CT_GPIO_Port,RE_CT_Pin,RE_CT_state);
 
    AD9854_InitSingle();
-   AD9854_SetSine(100,4095); //初始化1khz正弦波，幅值大约是220MVpp
+   AD9854_SetSine(1000,4095); //初始化1khz正弦波，幅值大约是220MVpp
   /* USER CODE END 2 */
 
   /* Infinite loop */

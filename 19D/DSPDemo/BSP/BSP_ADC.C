@@ -6,6 +6,7 @@
 #include "adc.h"
 #include "stdio.h"
 #include "arm_math.h"
+#include "AD9854_Parallel.h"
 //----------- ADC -----------//
 volatile uint32_t sample_rate = ADC_SAMPLE_RATE;
 __attribute__((section (".RAM_SDRAM"))) ADC_def	adc_ch[3];
@@ -60,7 +61,8 @@ float32_t U_DC_new;
 uint16_t  ele_state;   //电路目前状态
 volatile uint16_t  re_flag = 0;     //状态混叠改变输入条件重新判断标志位
 uint16_t RE_CT_state;  //输入信号幅值标志位   0：25mv     1：300mv
-
+uint16_t  C_flag;
+uint32_t  freqc;
 
 //判断条件
 						float32_t pdata_re;
@@ -218,12 +220,12 @@ void adc_dsp_working(void)
 			    arm_max_f32(adc2_fft_output,MAX_FFT_N/2,&pdata2,&pindex2);
 			    arm_max_f32(adc3_fft_output,MAX_FFT_N/2,&pdata3,&pindex3);
 
+				freqc = 819200*pindex1/4096;
 
 
 
-
-			    U_source_reg  = (R_OUT_state==0) ?pdata1 : U_source_reg;  //空载输出电压
-			    U_in_reg      = (R_OUT_state==0) ?pdata3 : U_in_reg;      //空载输入电压
+			    U_source_reg  = (R_OUT_state==1) ?pdata1 : U_source_reg;  //空载输出电压
+			    U_in_reg      = (R_OUT_state==1) ?pdata3 : U_in_reg;      //空载输入电压
 			
 			if(R_OUT_state==0)				
 			{ 
@@ -295,6 +297,8 @@ void adc_dsp_working(void)
 			}
 			else 
 		    {
+			
+				
 			  //R1的情况    开路：交流分量为0，直流分量为电源电压    
 			  //R2的情况    开路：交流信号为0.9，直流分量为4.1的直流分量
 			  //R3的情况    开路：交流信号为0， 直流分量也近乎为0
@@ -307,7 +311,7 @@ void adc_dsp_working(void)
 			
 			  //判断R的情况应该是基于输出电阻和输入电阻的情况来判断
 			  //条件找区别其他比较显著的判断，尽量条件少一点
-			  if(re_flag == 0)			//重新调整条件判断标志位
+			  if(re_flag == 0&&C_flag ==0)			//重新调整条件判断标志位
 			  {
 				if(R_IN > (R_IN_reg*4.5))    ele_state = 1; 		//R1开路，电阻大概为15000+，实际上的电压也是趋近于直流电压，后续有输入电阻相近的做第二个判断条件
 			    else if((R_OUT_DC >(U_DC_reg*0.5))&&(R_OUT_DC<(U_DC_reg*1.1))&&(pdata1 < 0.1)) 
@@ -347,13 +351,48 @@ void adc_dsp_working(void)
 							ele_state = 11;			//C2两倍
 						}
 						else
+						// {
+						// 	ele_state = 0;
+
+						// }
 						{
-							ele_state = 0; 
+							static uint8_t counter  = 0;
+							if(counter <=3)
+							{
+								counter ++;
+							}
+							else
+							{
+								AD9854_SetSine(100000,4095);
+								C_flag = 1;
+								counter =0;
+								
+								//ele_state = 0;
+							}
+							 
 						}
+							
 			   	        
 			   		}
 			    }
 			  }
+			  else  if(C_flag == 1)
+			  {
+				if(freqc == 100000)
+				{
+					if( ((pdata1*U_OUT_ZOOM))/((pdata3/U_IN_ZOOM)) >137)
+					    ele_state = 12;		//C3开路
+					else 
+					{
+						AD9854_SetSine(1000,4095);
+						ele_state = 0;	
+						C_flag = 0;
+					}
+				}
+					
+						
+			// 		printf("%d,%f,%d,%f,%f\n",ele_state,U_ZOOM,R_OUT_state,U_source_reg,U_in_reg);
+			   }
 			  else 
 			  {
 				// static uint8_t RE_ct_count = 0;	//	由于在开关时会有不稳定状态，所以取稳定时的状态作为判断标准
@@ -399,16 +438,16 @@ void adc_dsp_working(void)
 			  
 
 			  
-			printf("%d,%d,%d,%f,%f,%f\n",ele_state,re_flag,RE_CT_state,(pdata_re*ZOOM),R_OUT_DC,R_IN);
+			//printf("%d,%d,%d,%f,%f,%f\n",ele_state,re_flag,RE_CT_state,(pdata_re*ZOOM),R_OUT_DC,R_IN);
 			
 			 
-			  
-
-			  //printf("%d,%f,%f,%f,%f\n",ele_state,R_OUT_DC,pdata1,R_OUT,R_IN);
-			}
+			  printf("%d,%d,%f\n",ele_state,freqc,U_ZOOM);
 			
-
-		}
+			  //printf("%d,%f,%f,%f,%f\n",ele_state,R_OUT_DC,pdata1,R_OUT,R_IN);
+ 			}
+			
+		}	
+		
     }
 		
  }
