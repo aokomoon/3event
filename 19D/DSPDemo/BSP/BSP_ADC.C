@@ -285,7 +285,7 @@ void adc_dsp_working(void)
 				//printf("Rout.txt=\"%.2f\"\xFF\xFF\xFF",R_OUT);
 			    //printf("Rin.txt=\"%.2f\"\xFF\xFF\xFF",R_IN);
 			    //printf("U.txt=\"%.2f\"\xFF\xFF\xFF",U_ZOOM);
-				printf("%f,%f,%f,%d,%d\n",R_IN,R_OUT,U_ZOOM,R_OUT_DC,pdata1);
+				printf("%f,%f,%f,%f,%f\n",R_IN,R_OUT,U_ZOOM,R_OUT_DC,pdata1);
 				//printf("%f,%f\n",R_OUT_DC,pdata1);
 
 
@@ -306,17 +306,27 @@ void adc_dsp_working(void)
 			  //条件找区别其他比较显著的判断，尽量条件少一点
 			  if(re_flag == 0)			//重新调整条件判断标志位
 			  {
-				if(R_IN > (R_IN_reg*3))    ele_state = 1; 		//R1开路，电阻大概为15000+，实际上的电压也是趋近于直流电压，后续有输入电阻相近的做第二个判断条件
-			    else if((R_OUT_DC >(U_DC_reg*0.5))&&(R_OUT_DC<(U_DC_reg))&&(pdata1 < 0.03))  ele_state = 2; //R2开路
+				if(R_IN > (R_IN_reg*4.5))    ele_state = 1; 		//R1开路，电阻大概为15000+，实际上的电压也是趋近于直流电压，后续有输入电阻相近的做第二个判断条件
+			    else if((R_OUT_DC >(U_DC_reg*0.5))&&(R_OUT_DC<(U_DC_reg*1.1))&&(pdata1 < 0.1)) 
+				{
+					if(R_IN>(R_IN_reg*4)) ele_state = 10; //C2开路
+					else if(R_IN < (2*(-R_IN_reg)))   ele_state = 9;			//C1开路
+					else
+					ele_state = 2; //R2开路
+				}
+				
 			  //else if((R_OUT_DC<(U_DC_reg*0.5))&&(pdata1 < 0.04))  ele_state = 3;  //R3开路
-			    else if((R_IN > (R_IN_reg*2))&& (R_IN < (R_IN_reg*3))) ele_state = 4; //R4开路
+			    else if((R_IN > (R_IN_reg*4))&& (R_IN < (R_IN_reg*4.5))) ele_state = 4; //R4开路
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
 			    else if((R_OUT_DC>(3))&&(pdata1 < 0.04)&&(R_OUT<(R_OUT_reg*0.21))&&((R_IN<(R_IN_reg*0.5)))) ele_state = 5; //R1短路
-			    else if((R_OUT_DC<3.0f)&&(R_OUT_DC>(U_DC_reg)&&(R_IN<(R_IN_reg*0.21)))) ele_state = 6;//R2短路
+			    else if((R_OUT_DC<3.0f)&&(R_OUT_DC>(U_DC_reg)&&(R_IN<(R_IN_reg*0.3)))) ele_state = 6;//R2短路
 			    else if((R_OUT_DC>(3))&&((R_IN>R_IN_reg*0.85)&&(R_IN<R_IN_reg*1.15))) ele_state = 7; //R3短路
 			 // else if((R_OUT_DC<(U_DC_reg*0.5))&&((pdata1 < 0.04))&&(R_IN<(R_IN_reg*0.16))&&(R_OUT<(R_OUT_reg*0.5))) ele_state = 8;         //R4短路
+				
+				//else if((R_OUT_DC<U_DC_reg*1.2)&&(R_OUT_DC>U_DC_reg*0.8))
+
 			    else 
 			     {
 			   		if((R_OUT_DC<(U_DC_reg*0.5))&&(pdata1 < 0.04)&&(R_IN<(R_IN_reg*0.16))&&(R_OUT<(R_OUT_reg*0.5)))//3、8区别判断，需要调整输入幅值
@@ -329,6 +339,9 @@ void adc_dsp_working(void)
 			   		}
 			   		else 
 			   		{
+						
+
+
 			   	        ele_state = 0; 
 			   		}
 			    }
@@ -347,11 +360,11 @@ void adc_dsp_working(void)
 						arm_max_f32(adc_ch[0].adc_float_buf,4096,&pdata_re,(uint32_t*)index_re);
 						if((pdata_re*ZOOM) >0.9&&(pdata_re*ZOOM)<3)
 						{
-							ele_state = 8;
+							ele_state = 8;  	 //R4短路
 						}
 						else  if((pdata_re*ZOOM) >0&&(pdata_re*ZOOM)<0.9)
 						{
-							ele_state = 3;
+							ele_state = 3;   	 //R3开路
 						}
 						else if((pdata_re*ZOOM)>3.0f)
 						{
