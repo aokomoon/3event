@@ -122,7 +122,7 @@ void adc_dsp_working(void)
 
 	/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 	/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-	    if(FSK_mode == 1)//扫频输出幅频特性曲线，ADC1是输入电压，ADC3是输出电压
+	 if(FSK_mode == 1)//扫频输出幅频特性曲线，ADC1是输入电压，ADC3是输出电压
 		{
 			
 		//printf("%d\n",adc_ch[0].conv_end_flag )	;
@@ -157,8 +157,8 @@ void adc_dsp_working(void)
 				
 				if(freq2<380000)
 				{
-					printf("add 1,0,%d\xFF\xFF\xFF",(int)(freq_response[freq2/1000]));
-
+					//printf("add 1,0,%d\xFF\xFF\xFF",(int)(freq_response[freq2/1000]));
+					printf("%f,%d\n",freq_response[freq2/1000],freq2);
 					//printf("%f,%f,%f,%d\n",,(pdata1*U_OUT_ZOOM),(pdata3/U_IN_ZOOM),freq2);
 					//printf("%f,%f,%d\n",(pdata2/U_IN_ZOOM),(pdata3/U_IN_ZOOM),freq2);
 				}
@@ -166,12 +166,13 @@ void adc_dsp_working(void)
 				{
 					float32_t U_data;
 					int U_index;
-					arm_max_f32(freq_response,400,&U_data,(uint32_t*)U_index);
-					for(int i=0;i<400;i++)
+					arm_max_f32(freq_response,200,&U_data,(uint32_t*)U_index);
+					for(int i=0;i<200;i++)
 					{
 						if(freq_response[i] >= (U_data*0.707-3.0f)&& freq_response[i] <= (U_data*0.707+3.0f))
 						{
 							printf("freqH.txt=\"%d\"\xFF\xFF\xFF\n",i*1000);
+							
 							break;
 						}
 					}
@@ -266,7 +267,7 @@ void adc_dsp_working(void)
 			}
 			if(U_source!=0&&U_real!=0&&(U_source>U_real))
 			{
-				R_OUT = (U_source/U_real  - 0.985)*R_OUT_f;   //输出电阻计算
+				R_OUT = (U_source/U_real  - 0.988)*R_OUT_f;   //输出电阻计算
 			}
 
 
@@ -286,6 +287,8 @@ void adc_dsp_working(void)
 			    //printf("Rin.txt=\"%.2f\"\xFF\xFF\xFF",R_IN);
 			    //printf("U.txt=\"%.2f\"\xFF\xFF\xFF",U_ZOOM);
 				printf("%f,%f,%f,%f,%f\n",R_IN,R_OUT,U_ZOOM,R_OUT_DC,pdata1);
+				//printf("%f\n",R_OUT*100);
+				//printf("%f,%f,%f,%f,%f,%f\n",R_OUT_DC,pdata2,pdata3,R_IN,R_OUT,U_ZOOM);
 				//printf("%f,%f\n",R_OUT_DC,pdata1);
 
 
@@ -339,10 +342,15 @@ void adc_dsp_working(void)
 			   		}
 			   		else 
 			   		{
-						
-
-
-			   	        ele_state = 0; 
+						if(R_IN<2600.0f)
+						{
+							ele_state = 11;			//C2两倍
+						}
+						else
+						{
+							ele_state = 0; 
+						}
+			   	        
 			   		}
 			    }
 			  }
@@ -391,7 +399,7 @@ void adc_dsp_working(void)
 			  
 
 			  
-			printf("%d,%d,%d,%f,%f,%f\n",ele_state,re_flag,RE_CT_state,(pdata_re*ZOOM),R_OUT_DC,R_OUT);
+			printf("%d,%d,%d,%f,%f,%f\n",ele_state,re_flag,RE_CT_state,(pdata_re*ZOOM),R_OUT_DC,R_IN);
 			
 			 
 			  
