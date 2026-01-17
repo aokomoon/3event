@@ -140,7 +140,7 @@ int main(void)
    R_OUT_state = 1;    //初始状态，继电器断开
    HAL_GPIO_WritePin(SWITCH_GPIO_Port,SWITCH_Pin,R_OUT_state);//低电平断开，负载电压，继电器接口
 
-   RE_CT_state=0;      //使能0：25mv     1：300mv 
+   RE_CT_state=1;      //使能1：25mv     0：300mv 
    HAL_GPIO_WritePin(RE_CT_GPIO_Port,RE_CT_Pin,RE_CT_state);
 
    AD9854_InitSingle();
@@ -155,69 +155,69 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
     
-    //    if(USART_RX_STA&0x8000)
-    //   {
-    //     len=USART_RX_STA&0x3fff;//得到此次接收到的数据长度，具体可以看看源码，非常有意思
-    //     //uint16_t*p = (uint16_t*)USART_RX_BUF;
-    //      //HAL_UART_Transmit(&huart1,USART_RX_BUF,,1000);
-    //     // printf("%d,%d\n",USART_RX_BUF[0],USART_RX_BUF[1]);
-    //     //printf("%d\n",USART_RX_BUF[0],USART_RX_BUF[1]);
-    //     if(USART_RX_BUF[0] == 0xEE && USART_RX_BUF[1] == 0xFF)  //普通判断模式
-    //     {
-    //         power_mode = 0;
-    //         FSK_mode   = 0;
-    //     }
-    //     else if(USART_RX_BUF[0] == 0xCC && USART_RX_BUF[1] == 0xDD)//扫频模式
-    //     {
-    //         FSK_mode = 1;
-    //         R_OUT_state = 0;
-    //         freq = 0;
-		//        	HAL_GPIO_WritePin(SWITCH_GPIO_Port,SWITCH_Pin,R_OUT_state);//低电平断开，负载电压，继电器接口
-    //     }
-    //     else if(USART_RX_BUF[0] == 0xAA && USART_RX_BUF[1] == 0xBB)
-    //     {
-    //         power_mode = 1; //故障检测
-    //         FSK_mode   = 0;
+       if(USART_RX_STA&0x8000)
+      {
+        len=USART_RX_STA&0x3fff;//得到此次接收到的数据长度，具体可以看看源码，非常有意思
+        //uint16_t*p = (uint16_t*)USART_RX_BUF;
+         //HAL_UART_Transmit(&huart1,USART_RX_BUF,,1000);
+        // printf("%d,%d\n",USART_RX_BUF[0],USART_RX_BUF[1]);
+        //printf("%d\n",USART_RX_BUF[0],USART_RX_BUF[1]);
+        if(USART_RX_BUF[0] == 0xEE && USART_RX_BUF[1] == 0xFF)  //普通判断模式
+        {
+            power_mode = 0;
+            FSK_mode   = 0;
+        }
+        else if(USART_RX_BUF[0] == 0xCC && USART_RX_BUF[1] == 0xDD)//扫频模式
+        {
+            FSK_mode = 1;
+            R_OUT_state = 0;
+            freq = 0;
+		       	HAL_GPIO_WritePin(SWITCH_GPIO_Port,SWITCH_Pin,R_OUT_state);//低电平断开，负载电压，继电器接口
+        }
+        else if(USART_RX_BUF[0] == 0xAA && USART_RX_BUF[1] == 0xBB)
+        {
+            power_mode = 1; //故障检测
+            FSK_mode   = 0;
 
 
 
 
-    //     }
-		// 	  USART_RX_STA=0;
-    //   }
-    //   else
-    //   {
-    //      __NOP();//这部分也很要必要，否则会进不来判断，这部分就相当于空
-    //   }
+        }
+			  USART_RX_STA=0;
+      }
+      else
+      {
+         __NOP();//这部分也很要必要，否则会进不来判断，这部分就相当于空
+      }
       
-    // if(start_flag == 1 && (FSK_mode == 1))//扫频   1000-500k,步进100hz
-    // { 
+    if(start_flag == 1 && (FSK_mode == 1))//扫频   1000-500k,步进100hz
+    { 
       
-    //   AD9854_SetSine(freq,4095);
-    //   if(freq>400000)
-    //   {
-    //      freq = 400000;
-    //      AD9854_SetSine(freq,4095);   
-    //   }
-    //   else  if(freq==400000)
-    //   {
+      AD9854_SetSine(freq,4095);
+      if(freq>400000)
+      {
+         freq = 400000;
+         AD9854_SetSine(freq,4095);   
+      }
+      else  if(freq==400000)
+      {
 
-    //      freq = 1000;
-    //      AD9854_SetSine(freq,4095);
-    //      FSK_mode = 0;
-    //      start_flag = 1;
-    //   }
-    //   else
-    //   {
-    //     freq = freq + 1000;
-    //   }
+         freq = 1000;
+         AD9854_SetSine(freq,4095);
+         FSK_mode = 0;
+         start_flag = 1;
+      }
+      else
+      {
+        freq = freq + 1000;
+      }
        
-    //    start_flag = 0;
-    // }
-    // else if((FSK_mode == 0))
-    // {
-    //   freq = 1000;
-    // }
+       start_flag = 0;
+    }
+    else if((FSK_mode == 0))
+    {
+      freq = 1000;
+    }
    
    
     adc_dsp_working();

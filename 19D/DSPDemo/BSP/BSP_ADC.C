@@ -39,9 +39,11 @@ uint32_t pindex1  =0;
 uint32_t pindex2  =0;
 uint32_t pindex3  =0;
 
-float32_t pdata1  =0;
-float32_t pdata2  =0;
-float32_t pdata3  =0;
+
+//交流信号值
+float32_t pdata1  =0;		//输出
+float32_t pdata2  =0;		//输入外（靠近dds）
+float32_t pdata3  =0;		//数入内（靠近电路）
 
 
 //基础部分
@@ -58,6 +60,11 @@ float32_t U_DC_new;
 uint16_t  ele_state;   //电路目前状态
 volatile uint16_t  re_flag = 0;     //状态混叠改变输入条件重新判断标志位
 uint16_t RE_CT_state;  //输入信号幅值标志位   0：25mv     1：300mv
+
+
+//判断条件
+						float32_t pdata_re;
+						uint16_t index_re;
 
 
 
@@ -83,7 +90,7 @@ float32_t R_OUT_DC;
 
 //扫频
 volatile uint8_t FSK_mode;  //扫频模式
-volatile uint8_t power_mode;//故障模式
+volatile uint8_t power_mode = 0;//故障模式
 
 float32_t freq_response[4000];		//扫频对应的频幅特性
 
@@ -227,9 +234,13 @@ void adc_dsp_working(void)
 				  R_OUT_state = 1;
 				  HAL_GPIO_WritePin(SWITCH_GPIO_Port,SWITCH_Pin,R_OUT_state);
 				}
-				else  if(R_OUT1_count==2)
+				else  if(R_OUT1_count <=1)
 				{
-					U_source = (pdata1*2+R_OUT_DC);  //空载电压
+				    __NOP();
+				}
+				else
+				{
+					U_real = (pdata1*2+R_OUT_DC);  //空载电压
 				}
 			}
 			else 
@@ -243,9 +254,13 @@ void adc_dsp_working(void)
 				  R_OUT_state = 0;
 				  HAL_GPIO_WritePin(SWITCH_GPIO_Port,SWITCH_Pin,R_OUT_state);
 				}
-				else  if(R_OUT2_count==2)
+				else  if(R_OUT2_count<=1)
 				{
-					U_real = (pdata1*2+R_OUT_DC); 	//负载电压
+				    __NOP();
+				}
+			    else
+				{
+					U_source = (pdata1*2+R_OUT_DC); 	//负载电压
 				}
 				
 			}
@@ -267,10 +282,10 @@ void adc_dsp_working(void)
 				R_IN_reg = R_IN;   
 				U_AC_reg = pdata1*U_OUT_ZOOM;
 			    U_DC_reg = R_OUT_DC;
-				printf("Rout.txt=\"%.2f\"\xFF\xFF\xFF",R_OUT);
-			    printf("Rin.txt=\"%.2f\"\xFF\xFF\xFF",R_IN);
-			    printf("U.txt=\"%.2f\"\xFF\xFF\xFF",U_ZOOM);
-				
+				//printf("Rout.txt=\"%.2f\"\xFF\xFF\xFF",R_OUT);
+			    //printf("Rin.txt=\"%.2f\"\xFF\xFF\xFF",R_IN);
+			    //printf("U.txt=\"%.2f\"\xFF\xFF\xFF",U_ZOOM);
+				printf("%f,%f,%f,%d,%d\n",R_IN,R_OUT,U_ZOOM,R_OUT_DC,pdata1);
 				//printf("%f,%f\n",R_OUT_DC,pdata1);
 
 
@@ -307,9 +322,9 @@ void adc_dsp_working(void)
 			   		if((R_OUT_DC<(U_DC_reg*0.5))&&(pdata1 < 0.04)&&(R_IN<(R_IN_reg*0.16))&&(R_OUT<(R_OUT_reg*0.5)))//3、8区别判断，需要调整输入幅值
 			   		{
 			   			re_flag = 1;
-						RE_CT_state = 1;
-						power_mode  = 1;
-						HAL_GPIO_WritePin(RE_CT_GPIO_Port,RE_CT_Pin,RE_CT_state);			//当前状态设置，1：500mv；2：25mv
+						RE_CT_state = 0;
+						// power_mode  = 1;
+						HAL_GPIO_WritePin(RE_CT_GPIO_Port,RE_CT_Pin,RE_CT_state);			//当前状态设置，0：500mv；1：25mv
 
 			   		}
 			   		else 
@@ -320,45 +335,51 @@ void adc_dsp_working(void)
 			  }
 			  else 
 			  {
-				static uint8_t RE_ct_count = 0;	//	由于在开关时会有不稳定状态，所以取稳定时的状态作为判断标准
-				if(RE_ct_count <= 3)			//等到稳定之后在判断
-				{
-					RE_ct_count ++;
-					if(RE_ct_count == 1)
-					{
-						//判断条件
-						float32_t pdata_re;
-						uint16_t index_re;
+				// static uint8_t RE_ct_count = 0;	//	由于在开关时会有不稳定状态，所以取稳定时的状态作为判断标准
+				// if(RE_ct_count <= 3)			//等到稳定之后在判断
+				// {
+				// 	RE_ct_count ++;
+					// if(RE_ct_count == 1)
+					// {
+						
 						//两者在输出幅值有较大变化，3：依然较小，8：由于饱和幅值有个尖峰
 						//3：R3开路       8：R4短路
-						arm_max_f32(adc_ch[0].adc_float_buf,4096,&pdata_re,&index_re);
-						if(pdata_re >2.4&&pdata_re<3)
+						arm_max_f32(adc_ch[0].adc_float_buf,4096,&pdata_re,(uint32_t*)index_re);
+						if((pdata_re*ZOOM) >0.9&&(pdata_re*ZOOM)<3)
 						{
 							ele_state = 8;
 						}
-						else  if(pdata_re >0&&pdata_re<0.3)
+						else  if((pdata_re*ZOOM) >0&&(pdata_re*ZOOM)<0.9)
 						{
 							ele_state = 3;
+						}
+						else if((pdata_re*ZOOM)>3.0f)
+						{
+							//RE_ct_count = 0;
+						    //power_mode  = 0;
+						    RE_CT_state = 1;
+						    HAL_GPIO_WritePin(RE_CT_GPIO_Port,RE_CT_Pin,RE_CT_state);
+							re_flag = 0;
 						}
 						else
 						{
 							ele_state = 0;
 						}
 
-					}
-					else if(RE_ct_count == 3)
-					{
-						RE_ct_count = 0;
-						power_mode  = 0;
-					} 
-				}
+					//}
+					// else if(RE_ct_count == 3)
+					// {
+						
+						
+					//} 
+			}
 				
-			  }
+			 // }
 			  
 
 			  
-			 
-			 
+			printf("%d,%d,%d,%f,%f,%f\n",ele_state,re_flag,RE_CT_state,(pdata_re*ZOOM),R_OUT_DC,R_OUT);
+			
 			 
 			  
 
