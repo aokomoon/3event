@@ -248,7 +248,7 @@ void adc_dsp_working(void)
 			}
 			else 
 			{
-
+				//111
 				R_OUT2_count++;
 				
 				if(R_OUT2_count>=4)
