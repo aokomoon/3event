@@ -1,0 +1,79 @@
+Info: Starting: Create simulation model
+Info: qsys-generate D:\3event\23H\quartus_prj\ip_core\fft\fftsign.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=D:\3event\23H\quartus_prj\ip_core\fft\fftsign\simulation --family="Cyclone IV E" --part=EP4CE15F17C6
+Progress: Loading fft/fftsign.qsys
+Progress: Reading input file
+Progress: Adding fft_ii_0 [altera_fft_ii 18.0]
+Progress: Parameterizing module fft_ii_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: fftsign.fft_ii_0: Radix-2 digit reverse implied
+Info: fftsign: Generating fftsign "fftsign" for SIM_VERILOG
+Info: fft_ii_0: --- add file: fftsign_fft_ii_0_3n1024sin.hex
+Info: fft_ii_0: --- add file: fftsign_fft_ii_0_1n1024cos.hex
+Info: fft_ii_0: --- add file: fftsign_fft_ii_0_2n1024cos.hex
+Info: fft_ii_0: --- add file: fftsign_fft_ii_0_1n1024sin.hex
+Info: fft_ii_0: --- add file: fftsign_fft_ii_0_2n1024sin.hex
+Info: fft_ii_0: --- add file: fftsign_fft_ii_0_3n1024cos.hex
+Info: fft_ii_0: "fftsign" instantiated altera_fft_ii "fft_ii_0"
+Info: fftsign: Done "fftsign" with 2 modules, 244 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=D:\3event\23H\quartus_prj\ip_core\fft\fftsign\fftsign.spd --output-directory=D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=D:\3event\23H\quartus_prj\ip_core\fft\fftsign\fftsign.spd --output-directory=D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Skipping VCS script generation since VHDL file $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_syn_attributes.vhd is required for simulation
+Info: Generating the following file(s) for VCSMX simulator in D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	1 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create Modelsim Project.
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate D:\3event\23H\quartus_prj\ip_core\fft\fftsign.qsys --block-symbol-file --output-directory=D:\3event\23H\quartus_prj\ip_core\fft\fftsign --family="Cyclone IV E" --part=EP4CE15F17C6
+Progress: Loading fft/fftsign.qsys
+Progress: Reading input file
+Progress: Adding fft_ii_0 [altera_fft_ii 18.0]
+Progress: Parameterizing module fft_ii_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: fftsign.fft_ii_0: Radix-2 digit reverse implied
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate D:\3event\23H\quartus_prj\ip_core\fft\fftsign.qsys --synthesis=VERILOG --greybox --output-directory=D:\3event\23H\quartus_prj\ip_core\fft\fftsign\synthesis --family="Cyclone IV E" --part=EP4CE15F17C6
+Progress: Loading fft/fftsign.qsys
+Progress: Reading input file
+Progress: Adding fft_ii_0 [altera_fft_ii 18.0]
+Progress: Parameterizing module fft_ii_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: fftsign.fft_ii_0: Radix-2 digit reverse implied
+Info: fftsign: Generating fftsign "fftsign" for QUARTUS_SYNTH
+Info: fft_ii_0: --- add file: fftsign_fft_ii_0_3n1024sin.hex
+Info: fft_ii_0: --- add file: fftsign_fft_ii_0_1n1024cos.hex
+Info: fft_ii_0: --- add file: fftsign_fft_ii_0_2n1024cos.hex
+Info: fft_ii_0: --- add file: fftsign_fft_ii_0_1n1024sin.hex
+Info: fft_ii_0: --- add file: fftsign_fft_ii_0_2n1024sin.hex
+Info: fft_ii_0: --- add file: fftsign_fft_ii_0_3n1024cos.hex
+Info: fft_ii_0: "fftsign" instantiated altera_fft_ii "fft_ii_0"
+Info: fftsign: Done "fftsign" with 2 modules, 108 files
+Info: Generating third-party timing and resource estimation model ...
+Info: Done generating third-party timing and resource estimation model.
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

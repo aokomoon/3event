@@ -118,6 +118,7 @@ virtualFolder:
     - name: BSP
       files:
         - path: ../BSP/BSP_ADC.C
+        - path: ../BSP/CRY.c
       folders: []
     - name: FFT
       files:

@@ -1,0 +1,13 @@
+  D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_text_pkg.vhd \
+  D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_math_pkg.vhd \
+  D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_lib_pkg.vhd \
+  D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_roundsat.vhd \
+  D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_avalon_streaming_sink.vhd \
+  D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_avalon_streaming_source.vhd \
+  D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_avalon_streaming_controller.vhd \
+  D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/fftsign_fft_ii_0.sv \
+  D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/fftsign.v \
+  D:/3event/23H/quartus_prj/ip_core/cordic/cordic/simulation/submodules/dspba_library_package.vhd \
+  D:/3event/23H/quartus_prj/ip_core/cordic/cordic/simulation/submodules/dspba_library.vhd \
+  D:/3event/23H/quartus_prj/ip_core/cordic/cordic/simulation/submodules/cordic_CORDIC_0.vhd \
+  D:/3event/23H/quartus_prj/ip_core/cordic/cordic/simulation/cordic.v \
