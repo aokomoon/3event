@@ -1,0 +1,4419 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/3event/23H/quartus_prj/simulation/modelsim
+Ealtera_fft_dual_port_ram
+Z1 w1768807003
+Z2 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 ^Ch;U@;bMk1;>A2B<UV`k2
+Z3 DPx9 altera_mf 20 altera_mf_components 0 22 BN6nPmY:UEbXa[^5b@FTW1
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 6652
+R0
+Z6 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/altera_fft_dual_port_ram.vhd
+Z7 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/altera_fft_dual_port_ram.vhd
+l0
+Z8 L36 1
+Vj6@H@VIQ1MYbEnh8cjHUz1
+!s100 BdH<Ejoz0S=ZH<o>;hXEU3
+Z9 OV;C;2020.1;71
+32
+Z10 !s110 1768999753
+!i10b 1
+Z11 !s108 1768999753.000000
+Z12 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/altera_fft_dual_port_ram.vhd|-work|fft_ii_0|
+Z13 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/altera_fft_dual_port_ram.vhd|
+!i113 1
+Z14 o-work fft_ii_0
+Z15 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+R5
+DEx4 work 24 altera_fft_dual_port_ram 0 22 j6@H@VIQ1MYbEnh8cjHUz1
+!i122 6652
+l72
+L58 120
+Vn9K@ClSAi9[bC549H;SMK0
+!s100 gm8ZEgojZ5`o8H:6`25<N0
+R9
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 1
+R14
+R15
+Ealtera_fft_dual_port_rom
+R1
+R2
+R3
+R4
+R5
+!i122 6653
+R0
+Z16 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/altera_fft_dual_port_rom.vhd
+Z17 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/altera_fft_dual_port_rom.vhd
+l0
+Z18 L23 1
+Vk^iZF[f1FUAA9UfR9z5<l2
+!s100 H@bfF4k1@3>K]G7b8V1o31
+R9
+32
+Z19 !s110 1768999754
+!i10b 1
+Z20 !s108 1768999754.000000
+Z21 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/altera_fft_dual_port_rom.vhd|-work|fft_ii_0|
+Z22 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/altera_fft_dual_port_rom.vhd|
+!i113 1
+R14
+R15
+Artl
+R2
+R3
+R4
+R5
+DEx4 work 24 altera_fft_dual_port_rom 0 22 k^iZF[f1FUAA9UfR9z5<l2
+!i122 6653
+l56
+L43 101
+V2FN;`zc;d^[Bb9nRPg_X62
+!s100 ;GaRoKFCibl2c^@<T9i<e3
+R9
+32
+R19
+!i10b 1
+R20
+R21
+R22
+!i113 1
+R14
+R15
+Ealtera_fft_mult_add
+R1
+Z23 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z24 DPx4 ieee 16 std_logic_signed 0 22 C<aanc0R`<LWPSe[JYRP^3
+R4
+R5
+!i122 6654
+R0
+Z25 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/altera_fft_mult_add.vhd
+Z26 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/altera_fft_mult_add.vhd
+l0
+R18
+VC`Md>XXgeMW4aFaTY3@jP3
+!s100 H3ijk[GZk;X8zc0o_;TmB2
+R9
+32
+R19
+!i10b 1
+R20
+Z27 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/altera_fft_mult_add.vhd|-work|fft_ii_0|
+Z28 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/altera_fft_mult_add.vhd|
+!i113 1
+R14
+R15
+Artl
+R23
+R24
+R4
+R5
+DEx4 work 19 altera_fft_mult_add 0 22 C`Md>XXgeMW4aFaTY3@jP3
+!i122 6654
+l90
+L42 88
+VD@UQ1he;gmI^[k00IoeLX3
+!s100 XM<X`BMJP<j_BQ5P>ITka0
+R9
+32
+R19
+!i10b 1
+R20
+R27
+R28
+!i113 1
+R14
+R15
+Ealtera_fft_mult_add_new
+R1
+R2
+R23
+R24
+R4
+R5
+!i122 6654
+R0
+R25
+R26
+l0
+L140 1
+V4dOdIlfzC=8UYVLURT:_?1
+!s100 c]NbY]7F0z4IKmBL3546X3
+R9
+32
+R19
+!i10b 1
+R20
+R27
+R28
+!i113 1
+R14
+R15
+Artl
+R2
+R23
+R24
+R4
+R5
+DEx4 work 23 altera_fft_mult_add_new 0 22 4dOdIlfzC=8UYVLURT:_?1
+!i122 6654
+l160
+L159 228
+Vz:PZI@lPMb9RdzULbE8JS2
+!s100 UlgY90<;2FLH1=;EO>Cz?0
+R9
+32
+R19
+!i10b 1
+R20
+R27
+R28
+!i113 1
+R14
+R15
+Ealtera_fft_mult_add_old
+R1
+R3
+R23
+R24
+R4
+R5
+!i122 6654
+R0
+R25
+R26
+l0
+L396 1
+V;KF^jSSGL713`3m]?I6FB0
+!s100 aF?UYhC@k_k9hUB@4LdAJ0
+R9
+32
+R19
+!i10b 1
+R20
+R27
+R28
+!i113 1
+R14
+R15
+Artl
+R3
+R23
+R24
+R4
+R5
+DEx4 work 23 altera_fft_mult_add_old 0 22 ;KF^jSSGL713`3m]?I6FB0
+!i122 6654
+l416
+L415 73
+V3U8R]lCIHMTd_S<=R@YUZ0
+!s100 `9=3M8iUc?d1YHYUJ4[A:0
+R9
+32
+R19
+!i10b 1
+R20
+R27
+R28
+!i113 1
+R14
+R15
+Ealtera_fft_single_port_rom
+R1
+R2
+R3
+R4
+R5
+!i122 6655
+R0
+Z29 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/altera_fft_single_port_rom.vhd
+Z30 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/altera_fft_single_port_rom.vhd
+l0
+R18
+V57:TM2d^J?@^bI5`Z^=G<3
+!s100 G6:9o[WFbD2oWH;=8]nNE0
+R9
+32
+R19
+!i10b 1
+R20
+Z31 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/altera_fft_single_port_rom.vhd|-work|fft_ii_0|
+Z32 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/altera_fft_single_port_rom.vhd|
+!i113 1
+R14
+R15
+Artl
+R2
+R3
+R4
+R5
+DEx4 work 26 altera_fft_single_port_rom 0 22 57:TM2d^J?@^bI5`Z^=G<3
+!i122 6655
+l53
+L40 64
+VgnlhmKRj@ePWT@nf[lala1
+!s100 3eQFGiX^SoLO=2e[F@R1U1
+R9
+32
+R19
+!i10b 1
+R20
+R31
+R32
+!i113 1
+R14
+R15
+Eapn_fft_cmult_cpx
+R1
+R3
+Z33 DPx4 work 8 fft_pack 0 22 8cmehlU<iKfVa62GQ3MT@0
+Z34 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R23
+R4
+R5
+!i122 6660
+R0
+Z35 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_cmult_cpx.vhd
+Z36 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_cmult_cpx.vhd
+l0
+Z37 L38 1
+Vb1Fmnjm8fMf`NB3W9b`Ie2
+!s100 Kg]P?d<bZ42R^j;AFO5D@0
+R9
+32
+Z38 !s110 1768999756
+!i10b 1
+Z39 !s108 1768999756.000000
+Z40 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_cmult_cpx.vhd|-work|fft_ii_0|
+Z41 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_cmult_cpx.vhd|
+!i113 1
+R14
+R15
+Amodel
+R3
+R33
+R34
+R23
+R4
+R5
+DEx4 work 17 apn_fft_cmult_cpx 0 22 b1Fmnjm8fMf`NB3W9b`Ie2
+!i122 6660
+l70
+L58 119
+VmZ<cOlECm`D20Fb1FSOWj1
+!s100 F:81:fzHN^QIzEb6EPGVC3
+R9
+32
+R38
+!i10b 1
+R39
+R40
+R41
+!i113 1
+R14
+R15
+Eapn_fft_cmult_cpx2
+R1
+R3
+R33
+R34
+R23
+R4
+R5
+!i122 6661
+R0
+Z42 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_cmult_cpx2.vhd
+Z43 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_cmult_cpx2.vhd
+l0
+R37
+V;Af6X``6nfM[YGE]fCC=51
+!s100 ]AV:G_G7>7RTgN8nmOnYP0
+R9
+32
+R38
+!i10b 1
+R39
+Z44 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_cmult_cpx2.vhd|-work|fft_ii_0|
+Z45 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_cmult_cpx2.vhd|
+!i113 1
+R14
+R15
+Amodel
+R3
+R33
+R34
+R23
+R4
+R5
+DEx4 work 18 apn_fft_cmult_cpx2 0 22 ;Af6X``6nfM[YGE]fCC=51
+!i122 6661
+l69
+L57 119
+VI3NdzETE2kESeXlceg<Xn3
+!s100 <`leZDnb@NP<@ODVn=Ef73
+R9
+32
+R38
+!i10b 1
+R39
+R44
+R45
+!i113 1
+R14
+R15
+Eapn_fft_mult_can
+R1
+Z46 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R4
+R5
+!i122 6662
+R0
+Z47 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_mult_can.vhd
+Z48 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_mult_can.vhd
+l0
+Z49 L21 1
+V<C`Yo3D1NSm06iW1<1>m13
+!s100 lEcolbV>2PX_DQRI[@?C42
+R9
+32
+R38
+!i10b 1
+R39
+Z50 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_mult_can.vhd|-work|fft_ii_0|
+Z51 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_mult_can.vhd|
+!i113 1
+R14
+R15
+Artl
+R46
+R4
+R5
+DEx4 work 16 apn_fft_mult_can 0 22 <C`Yo3D1NSm06iW1<1>m13
+!i122 6662
+l57
+L39 56
+V;FNa@M7R9knXQ4WB;oRke1
+!s100 [O7jgRH:4l_8HkZSQVEIK2
+R9
+32
+R38
+!i10b 1
+R39
+R50
+R51
+!i113 1
+R14
+R15
+Eapn_fft_mult_cpx
+R1
+R46
+R4
+R5
+!i122 6663
+R0
+Z52 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_mult_cpx.vhd
+Z53 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_mult_cpx.vhd
+l0
+R49
+VGeh@g:m?k@zhm1;::6QV^0
+!s100 PekPO659JaXM;L7Z6KC@M3
+R9
+32
+Z54 !s110 1768999757
+!i10b 1
+Z55 !s108 1768999757.000000
+Z56 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_mult_cpx.vhd|-work|fft_ii_0|
+Z57 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_mult_cpx.vhd|
+!i113 1
+R14
+R15
+Artl
+R46
+R4
+R5
+DEx4 work 16 apn_fft_mult_cpx 0 22 Geh@g:m?k@zhm1;::6QV^0
+!i122 6663
+l50
+L39 40
+VgS9^f9COG`EK<5:hgL@Sa2
+!s100 74f@jkKkhZ8@nLZ=>Z1LG1
+R9
+32
+R54
+!i10b 1
+R55
+R56
+R57
+!i113 1
+R14
+R15
+vBNcR+7a3jv93NeXdxGCP5ifmV9U3AgpOnQmV/MCb/dA=
+Z58 !s110 1768999779
+!i10b 0
+!s100 :HYz@ZHG]lOX==kV;@XoZ3
+Z59 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IGX;95nB06IIbMHM_h>T323
+Z60 VDg1SIo80bB@j0V0VzS_@n1
+!i119 1
+!i8a 2040610576
+R0
+w1768999779
+8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_mult_cpx_1825.v
+FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_mult_cpx_1825.v
+!i122 6732
+Z61 L0 38 1
+Z62 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z63 !s108 1768999778.000000
+!s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_mult_cpx_1825.v|
+!s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/apn_fft_mult_cpx_1825.v|-work|fft_ii_0|
+!i113 1
+R14
+Z64 tCvgOpt 0
+n73d7cc5
+Easj_fft_1dp_ram
+R1
+R3
+Z65 DPx3 lpm 14 lpm_components 0 22 ZZ?0`GZD@?:kcFM0gmf[@1
+R33
+R23
+R34
+R4
+R5
+!i122 6664
+R0
+Z66 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_1dp_ram.vhd
+Z67 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_1dp_ram.vhd
+l0
+Z68 L45 1
+V_[TmXC`V_dzVhQ[aU=f_S1
+!s100 S`C:DNImQjmZ6dT1A34iW1
+R9
+32
+R54
+!i10b 1
+R55
+Z69 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_1dp_ram.vhd|-work|fft_ii_0|
+Z70 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_1dp_ram.vhd|
+!i113 1
+R14
+R15
+Asyn
+R3
+R65
+R33
+R23
+R34
+R4
+R5
+DEx4 work 15 asj_fft_1dp_ram 0 22 _[TmXC`V_dzVhQ[aU=f_S1
+!i122 6664
+l71
+L64 31
+V7GaRUd744P:UJNzX7UU2Q3
+!s100 CEPg3e2;gQ`b5>TND^Z8f1
+R9
+32
+R54
+!i10b 1
+R55
+R69
+R70
+!i113 1
+R14
+R15
+Easj_fft_1tdp_rom
+R1
+R3
+R65
+R33
+R23
+R34
+R4
+R5
+!i122 6665
+R0
+Z71 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_1tdp_rom.vhd
+Z72 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_1tdp_rom.vhd
+l0
+Z73 L47 1
+Vg3nSjYanXOC^<jGFHnf6d3
+!s100 5RR[1aA_`VT=bYoSPiobN2
+R9
+32
+R54
+!i10b 1
+R55
+Z74 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_1tdp_rom.vhd|-work|fft_ii_0|
+Z75 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_1tdp_rom.vhd|
+!i113 1
+R14
+R15
+Asyn
+R3
+R65
+R33
+R23
+R34
+R4
+R5
+DEx4 work 16 asj_fft_1tdp_rom 0 22 g3nSjYanXOC^<jGFHnf6d3
+!i122 6665
+l71
+L69 66
+Va6ll[VI^ii^k:K:P=cPz:2
+!s100 QWHJ5amCk5m0FGDP5Cm[N3
+R9
+32
+R54
+!i10b 1
+R55
+R74
+R75
+!i113 1
+R14
+R15
+Easj_fft_3dp_rom
+R1
+R3
+R65
+R33
+R23
+R34
+R4
+R5
+!i122 6666
+R0
+Z76 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_3dp_rom.vhd
+Z77 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_3dp_rom.vhd
+l0
+L48 1
+VH[BfL929n^I7nCHJGIWEj0
+!s100 NJZB;Z3]GoDRBm7fORh@C1
+R9
+32
+Z78 !s110 1768999758
+!i10b 1
+R55
+Z79 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_3dp_rom.vhd|-work|fft_ii_0|
+Z80 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_3dp_rom.vhd|
+!i113 1
+R14
+R15
+Asyn
+R3
+R65
+R33
+R23
+R34
+R4
+R5
+DEx4 work 15 asj_fft_3dp_rom 0 22 H[BfL929n^I7nCHJGIWEj0
+!i122 6666
+l75
+L73 386
+VDY7D^bUV6T;8i=J?ZTc4m2
+!s100 :mE79a9_38cG`XNmB5ANP3
+R9
+32
+R78
+!i10b 1
+R55
+R79
+R80
+!i113 1
+R14
+R15
+Easj_fft_3pi_mram
+R1
+R3
+R65
+R34
+R23
+R33
+R4
+R5
+!i122 6667
+R0
+Z81 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_3pi_mram.vhd
+Z82 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_3pi_mram.vhd
+l0
+L75 1
+VQPb0SS4^Cz?E<0k_f[YMS3
+!s100 J;dbifL4akUIgYk4UE2_J3
+R9
+32
+R78
+!i10b 1
+Z83 !s108 1768999758.000000
+Z84 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_3pi_mram.vhd|-work|fft_ii_0|
+Z85 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_3pi_mram.vhd|
+!i113 1
+R14
+R15
+Asyn
+R3
+R65
+R34
+R23
+R33
+R4
+R5
+DEx4 work 16 asj_fft_3pi_mram 0 22 QPb0SS4^Cz?E<0k_f[YMS3
+!i122 6667
+l158
+L100 127
+Vl2R>Ro4cL=8R<SXAd6jl21
+!s100 c22UP0>F=1@;3VhOa7Xhh2
+R9
+32
+R78
+!i10b 1
+R83
+R84
+R85
+!i113 1
+R14
+R15
+Easj_fft_3tdp_rom
+R1
+R3
+R65
+R33
+R23
+R34
+R4
+R5
+!i122 6668
+R0
+Z86 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_3tdp_rom.vhd
+Z87 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_3tdp_rom.vhd
+l0
+L55 1
+VzWd=Z@T;^bJBOD`l_KGRc0
+!s100 4Dga_zNgbY[HGJmf<5XGF0
+R9
+32
+R78
+!i10b 1
+R83
+Z88 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_3tdp_rom.vhd|-work|fft_ii_0|
+Z89 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_3tdp_rom.vhd|
+!i113 1
+R14
+R15
+Asyn
+R3
+R65
+R33
+R23
+R34
+R4
+R5
+DEx4 work 16 asj_fft_3tdp_rom 0 22 zWd=Z@T;^bJBOD`l_KGRc0
+!i122 6668
+l95
+L87 605
+V@RokXg<OY2`1X?HCUn?9Y3
+!s100 [:FgeoBUPf>UiGOziT]h@1
+R9
+32
+R78
+!i10b 1
+R83
+R88
+R89
+!i113 1
+R14
+R15
+Easj_fft_4dp_ram
+R1
+R3
+R65
+R33
+R23
+R34
+R4
+R5
+!i122 6669
+R0
+Z90 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_4dp_ram.vhd
+Z91 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_4dp_ram.vhd
+l0
+R73
+V7<DFB>7eX@z7Y1G1Y7?OI2
+!s100 FMefJHTCDWSLad;YlGzdB2
+R9
+32
+Z92 !s110 1768999759
+!i10b 1
+R83
+Z93 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_4dp_ram.vhd|-work|fft_ii_0|
+Z94 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_4dp_ram.vhd|
+!i113 1
+R14
+R15
+Asyn
+R3
+R65
+R33
+R23
+R34
+R4
+R5
+DEx4 work 15 asj_fft_4dp_ram 0 22 7<DFB>7eX@z7Y1G1Y7?OI2
+!i122 6669
+l80
+L68 42
+V5Po:7F2_:hRNeEfeo^3U@1
+!s100 ^[=FQRD_[ZKROzjC2]niI1
+R9
+32
+R92
+!i10b 1
+R83
+R93
+R94
+!i113 1
+R14
+R15
+Easj_fft_6tdp_rom
+R1
+R3
+R65
+R33
+R23
+R34
+R4
+R5
+!i122 6670
+R0
+Z95 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_6tdp_rom.vhd
+Z96 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_6tdp_rom.vhd
+l0
+L56 1
+Vz]Z<]=aOmAViZ5;]POzjD2
+!s100 Y2NFOIVDDn2Wnmfi^jAZ:1
+R9
+32
+R92
+!i10b 1
+Z97 !s108 1768999759.000000
+Z98 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_6tdp_rom.vhd|-work|fft_ii_0|
+Z99 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_6tdp_rom.vhd|
+!i113 1
+R14
+R15
+Asyn
+R3
+R65
+R33
+R23
+R34
+R4
+R5
+DEx4 work 16 asj_fft_6tdp_rom 0 22 z]Z<]=aOmAViZ5;]POzjD2
+!i122 6670
+l101
+L96 1144
+VWOVgYiS>BZ9z[2L9i>P492
+!s100 RK54B]AaV2l9N4X71jEO>1
+R9
+32
+R92
+!i10b 1
+R97
+R98
+R99
+!i113 1
+R14
+R15
+Easj_fft_alt_shift_tdl
+R1
+R3
+R65
+R34
+R23
+R33
+R4
+R5
+!i122 6671
+R0
+Z100 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_alt_shift_tdl.vhd
+Z101 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_alt_shift_tdl.vhd
+l0
+L82 1
+Vn5RG2SO_8^KDOIT^^fB@23
+!s100 hU6COj6k<=HjI9[4C^[5F1
+R9
+32
+R92
+!i10b 1
+R97
+Z102 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_alt_shift_tdl.vhd|-work|fft_ii_0|
+Z103 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_alt_shift_tdl.vhd|
+!i113 1
+R14
+R15
+Asyn
+R3
+R65
+R34
+R23
+R33
+R4
+R5
+DEx4 work 21 asj_fft_alt_shift_tdl 0 22 n5RG2SO_8^KDOIT^^fB@23
+!i122 6671
+l124
+L100 47
+V3@g[zfbb@lUK>X_Gdc?nh2
+!s100 fnIC2e<[>I`T_<nf^IITd3
+R9
+32
+R92
+!i10b 1
+R97
+R102
+R103
+!i113 1
+R14
+R15
+Easj_fft_bfp_ctrl
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6672
+R0
+Z104 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_ctrl.vhd
+Z105 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_ctrl.vhd
+l0
+Z106 L40 1
+VDLmhR?kl[b5HCj>HFak8I0
+!s100 MXG^BRXFAERV:RH8a];z33
+R9
+32
+Z107 !s110 1768999760
+!i10b 1
+R97
+Z108 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_ctrl.vhd|-work|fft_ii_0|
+Z109 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_ctrl.vhd|
+!i113 1
+R14
+R15
+Asyn
+R33
+R23
+R34
+R4
+R5
+DEx4 work 16 asj_fft_bfp_ctrl 0 22 DLmhR?kl[b5HCj>HFak8I0
+!i122 6672
+l116
+L62 685
+VlNn><EA50`HNzl:?=QaE@0
+!s100 DLB7z_f_PWAzk:YjYHo@82
+R9
+32
+R107
+!i10b 1
+R97
+R108
+R109
+!i113 1
+R14
+R15
+Easj_fft_bfp_i
+R1
+R34
+R33
+R23
+R24
+R4
+R5
+!i122 6673
+R0
+Z110 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_i.vhd
+Z111 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_i.vhd
+l0
+Z112 L39 1
+V59z[iAkTH13Q9cBjPf<0z3
+!s100 GkjUV]eEK>lJ=bP37G<o_2
+R9
+32
+R107
+!i10b 1
+Z113 !s108 1768999760.000000
+Z114 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_i.vhd|-work|fft_ii_0|
+Z115 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_i.vhd|
+!i113 1
+R14
+R15
+Ainput_bfp
+R34
+R33
+R23
+R24
+R4
+R5
+DEx4 work 13 asj_fft_bfp_i 0 22 59z[iAkTH13Q9cBjPf<0z3
+!i122 6673
+l125
+L70 204
+VX1=mf9cO]KCCMOE2V5>`01
+!s100 IGAajG2N;@^@I@[4E^nWg3
+R9
+32
+R107
+!i10b 1
+R113
+R114
+R115
+!i113 1
+R14
+R15
+Easj_fft_bfp_i_1pt
+R1
+R34
+R33
+R23
+R24
+R4
+R5
+!i122 6674
+R0
+Z116 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_i_1pt.vhd
+Z117 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_i_1pt.vhd
+l0
+R112
+VCTjbALm;2O9Q>4HK>bPl]1
+!s100 eAC76RJozS:FLKQH<dd_@0
+R9
+32
+R107
+!i10b 1
+R113
+Z118 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_i_1pt.vhd|-work|fft_ii_0|
+Z119 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_i_1pt.vhd|
+!i113 1
+R14
+R15
+Ainput_bfp
+R34
+R33
+R23
+R24
+R4
+R5
+DEx4 work 17 asj_fft_bfp_i_1pt 0 22 CTjbALm;2O9Q>4HK>bPl]1
+!i122 6674
+l97
+L69 97
+VeQZ=CC^NE3dU3STWDfXK30
+!s100 0_SJ6AMMKT98ABB13WhW22
+R9
+32
+R107
+!i10b 1
+R113
+R118
+R119
+!i113 1
+R14
+R15
+Easj_fft_bfp_o
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6675
+R0
+Z120 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_o.vhd
+Z121 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_o.vhd
+l0
+R68
+VYAAnEjc7bf8iR7:zPBG>e1
+!s100 Z:G>Gl>g6hFS4oJlDegk02
+R9
+32
+R107
+!i10b 1
+R113
+Z122 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_o.vhd|-work|fft_ii_0|
+Z123 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_o.vhd|
+!i113 1
+R14
+R15
+Aoutput_bfp
+R33
+R23
+R34
+R4
+R5
+DEx4 work 13 asj_fft_bfp_o 0 22 YAAnEjc7bf8iR7:zPBG>e1
+!i122 6675
+l143
+L76 1094
+VnAI>5Llm1fQ6c>Pz;z]k81
+!s100 0BNX>C]bTo7^nE<PH?3GX1
+R9
+32
+R107
+!i10b 1
+R113
+R122
+R123
+!i113 1
+R14
+R15
+Easj_fft_bfp_o_1pt
+R1
+R34
+R33
+R23
+R24
+R4
+R5
+!i122 6676
+R0
+Z124 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_o_1pt.vhd
+Z125 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_o_1pt.vhd
+l0
+Z126 L35 1
+V[fNLE?:WTAnbZ;jWmOFM@2
+!s100 CDnnU<;9dYM3C_>9O6_SQ3
+R9
+32
+Z127 !s110 1768999761
+!i10b 1
+Z128 !s108 1768999761.000000
+Z129 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_o_1pt.vhd|-work|fft_ii_0|
+Z130 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_bfp_o_1pt.vhd|
+!i113 1
+R14
+R15
+Aoutput_bfp
+R34
+R33
+R23
+R24
+R4
+R5
+DEx4 work 17 asj_fft_bfp_o_1pt 0 22 [fNLE?:WTAnbZ;jWmOFM@2
+!i122 6676
+l100
+L60 134
+Vo5[zXmgRM`76E3;c6<]P92
+!s100 ]NJ1PBD_0DbW:JlWVk44b3
+R9
+32
+R127
+!i10b 1
+R128
+R129
+R130
+!i113 1
+R14
+R15
+Easj_fft_burst_ctrl
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6677
+R0
+Z131 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_burst_ctrl.vhd
+Z132 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_burst_ctrl.vhd
+l0
+Z133 L41 1
+VK[e05H[aQk;AdKQERX]a83
+!s100 n201E]1Mo`W3TGDRnn=lz0
+R9
+32
+R127
+!i10b 1
+R128
+Z134 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_burst_ctrl.vhd|-work|fft_ii_0|
+Z135 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_burst_ctrl.vhd|
+!i113 1
+R14
+R15
+Aburst_sw
+R33
+R23
+R34
+R4
+R5
+DEx4 work 18 asj_fft_burst_ctrl 0 22 K[e05H[aQk;AdKQERX]a83
+!i122 6677
+l96
+L92 87
+Vc:?2gijl?=<jLOZLA=oN93
+!s100 edzQk^L5SGOdYGmIN4zQa2
+R9
+32
+R127
+!i10b 1
+R128
+R134
+R135
+!i113 1
+R14
+R15
+Easj_fft_burst_ctrl_de
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6678
+R0
+Z136 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_burst_ctrl_de.vhd
+Z137 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_burst_ctrl_de.vhd
+l0
+R112
+V1A8RAn2PonN3Ad?J;Chnk0
+!s100 HXCje19Qe6_c?QU?W6b0:3
+R9
+32
+Z138 !s110 1768999762
+!i10b 1
+R128
+Z139 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_burst_ctrl_de.vhd|-work|fft_ii_0|
+Z140 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_burst_ctrl_de.vhd|
+!i113 1
+R14
+R15
+Acnt_sw
+R33
+R23
+R34
+R4
+R5
+DEx4 work 21 asj_fft_burst_ctrl_de 0 22 1A8RAn2PonN3Ad?J;Chnk0
+!i122 6678
+l104
+L101 88
+VTECh05[jZD0la4<kH5<W@0
+!s100 _<hOBYF[C324i?MQ1mCHk2
+R9
+32
+R138
+!i10b 1
+R128
+R139
+R140
+!i113 1
+R14
+R15
+Easj_fft_burst_ctrl_qe
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6679
+R0
+Z141 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_burst_ctrl_qe.vhd
+Z142 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_burst_ctrl_qe.vhd
+l0
+R112
+VSgNnXZ^4KaGn3Djzbloo<1
+!s100 @UjYbGlz>k_m?]JW1E]^z1
+R9
+32
+R138
+!i10b 1
+Z143 !s108 1768999762.000000
+Z144 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_burst_ctrl_qe.vhd|-work|fft_ii_0|
+Z145 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_burst_ctrl_qe.vhd|
+!i113 1
+R14
+R15
+Acnt_sw
+R33
+R23
+R34
+R4
+R5
+DEx4 work 21 asj_fft_burst_ctrl_qe 0 22 SgNnXZ^4KaGn3Djzbloo<1
+!i122 6679
+l133
+L126 238
+VkboA^WY[3QDFaAfnO55@]0
+!s100 9PIJf2XKD?VakKHA7Cj`C0
+R9
+32
+R138
+!i10b 1
+R143
+R144
+R145
+!i113 1
+R14
+R15
+Easj_fft_cmult_can
+R1
+R3
+R65
+R33
+R34
+R23
+R4
+R5
+!i122 6680
+R0
+Z146 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cmult_can.vhd
+Z147 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cmult_can.vhd
+l0
+Z148 L44 1
+VcQcUbRJfG^fADGJMXZ5FY0
+!s100 AmBPC<JfaWhW3;=F0EkjG0
+R9
+32
+R138
+!i10b 1
+R143
+Z149 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cmult_can.vhd|-work|fft_ii_0|
+Z150 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cmult_can.vhd|
+!i113 1
+R14
+R15
+Amodel
+R3
+R65
+R33
+R34
+R23
+R4
+R5
+DEx4 work 17 asj_fft_cmult_can 0 22 cQcUbRJfG^fADGJMXZ5FY0
+!i122 6680
+l113
+L65 546
+VYD^@C]_BjiC>^?@naMPfc0
+!s100 ci]1FO9HSokhCBzC4<iSG1
+R9
+32
+R138
+!i10b 1
+R143
+R149
+R150
+!i113 1
+R14
+R15
+Easj_fft_cmult_std
+R1
+R3
+R65
+R33
+R34
+R23
+R4
+R5
+!i122 6681
+R0
+Z151 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cmult_std.vhd
+Z152 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cmult_std.vhd
+l0
+Z153 L43 1
+V_PO_0Md:3f?f1[PZL^9VF3
+!s100 62oXVBY8=8hD8;jUWFVXe3
+R9
+32
+R138
+!i10b 1
+R143
+Z154 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cmult_std.vhd|-work|fft_ii_0|
+Z155 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cmult_std.vhd|
+!i113 1
+R14
+R15
+Amodel
+R3
+R65
+R33
+R34
+R23
+R4
+R5
+DEx4 work 17 asj_fft_cmult_std 0 22 _PO_0Md:3f?f1[PZL^9VF3
+!i122 6681
+l108
+L62 999
+VG1ZZNH>^^zHKK0gfe?hEH2
+!s100 iigQ:5Tcm@]<BU?^7?5LV2
+R9
+32
+Z156 !s110 1768999763
+!i10b 1
+R143
+R154
+R155
+!i113 1
+R14
+R15
+Easj_fft_cnt_ctrl
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6682
+R0
+Z157 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cnt_ctrl.vhd
+Z158 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cnt_ctrl.vhd
+l0
+R126
+VbYKLl:lXdHRTio6EdV<6Z1
+!s100 H1NYcXm3G[J3WXE^>c<1e3
+R9
+32
+R156
+!i10b 1
+Z159 !s108 1768999763.000000
+Z160 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cnt_ctrl.vhd|-work|fft_ii_0|
+Z161 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cnt_ctrl.vhd|
+!i113 1
+R14
+R15
+Acnt_sw
+R33
+R23
+R34
+R4
+R5
+DEx4 work 16 asj_fft_cnt_ctrl 0 22 bYKLl:lXdHRTio6EdV<6Z1
+!i122 6682
+l89
+L86 67
+VhlX3BYPT]]>Q0]dUFmRb;1
+!s100 M2G?D=>6E<nF9JECQZZl[0
+R9
+32
+R156
+!i10b 1
+R159
+R160
+R161
+!i113 1
+R14
+R15
+Easj_fft_cnt_ctrl_de
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6683
+R0
+Z162 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cnt_ctrl_de.vhd
+Z163 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cnt_ctrl_de.vhd
+l0
+R8
+V4_k=e6T56IIlDNQ]6Z2I`1
+!s100 jAMR67S=5[L=QLSk3@Efa2
+R9
+32
+R156
+!i10b 1
+R159
+Z164 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cnt_ctrl_de.vhd|-work|fft_ii_0|
+Z165 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cnt_ctrl_de.vhd|
+!i113 1
+R14
+R15
+Acnt_sw
+R33
+R23
+R34
+R4
+R5
+DEx4 work 19 asj_fft_cnt_ctrl_de 0 22 4_k=e6T56IIlDNQ]6Z2I`1
+!i122 6683
+l101
+L98 88
+VO3bciGcNdEB`>=gK?hgIS2
+!s100 37j1<25^>M>Om9fQDZXlN1
+R9
+32
+R156
+!i10b 1
+R159
+R164
+R165
+!i113 1
+R14
+R15
+Easj_fft_cxb_addr
+R1
+R33
+R34
+R23
+R4
+R5
+!i122 6684
+R0
+Z166 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cxb_addr.vhd
+Z167 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cxb_addr.vhd
+l0
+Z168 L37 1
+Vd`:5YSiPBRbC^NPPBNi950
+!s100 ]EbUbcnAU;8^P]RYMhMb=1
+R9
+32
+R156
+!i10b 1
+R159
+Z169 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cxb_addr.vhd|-work|fft_ii_0|
+Z170 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cxb_addr.vhd|
+!i113 1
+R14
+R15
+Asyn
+R33
+R34
+R23
+R4
+R5
+DEx4 work 16 asj_fft_cxb_addr 0 22 d`:5YSiPBRbC^NPPBNi950
+!i122 6684
+l78
+L60 140
+VZ`cQnMI7f4PO3DDPQH3_J0
+!s100 Z9QUE8e_mX_]1=bVd]UJl0
+R9
+32
+R156
+!i10b 1
+R159
+R169
+R170
+!i113 1
+R14
+R15
+Easj_fft_cxb_data
+R1
+R33
+R34
+R23
+R4
+R5
+!i122 6685
+R0
+Z171 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cxb_data.vhd
+Z172 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cxb_data.vhd
+l0
+R148
+Vo^>R8N=olek62@W2iXoS41
+!s100 9BmcUX1@48i?H^6>5lHz:1
+R9
+32
+Z173 !s110 1768999764
+!i10b 1
+R159
+Z174 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cxb_data.vhd|-work|fft_ii_0|
+Z175 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cxb_data.vhd|
+!i113 1
+R14
+R15
+Asyn
+R33
+R34
+R23
+R4
+R5
+DEx4 work 16 asj_fft_cxb_data 0 22 o^>R8N=olek62@W2iXoS41
+!i122 6685
+l76
+L66 213
+Vm=jklg_ORScQVVE7[idl13
+!s100 PaA`k;Tc[@he^3E=;QP0T1
+R9
+32
+R173
+!i10b 1
+R159
+R174
+R175
+!i113 1
+R14
+R15
+Easj_fft_cxb_data_mram
+R1
+R33
+R34
+R23
+R4
+R5
+!i122 6686
+R0
+Z176 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cxb_data_mram.vhd
+Z177 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cxb_data_mram.vhd
+l0
+R37
+VQ:KUXA0I8l0=FbTK5<ciZ1
+!s100 onieUML0dLSFP2D7h6RaJ2
+R9
+32
+R173
+!i10b 1
+Z178 !s108 1768999764.000000
+Z179 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cxb_data_mram.vhd|-work|fft_ii_0|
+Z180 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cxb_data_mram.vhd|
+!i113 1
+R14
+R15
+Asyn
+R33
+R34
+R23
+R4
+R5
+DEx4 work 21 asj_fft_cxb_data_mram 0 22 Q:KUXA0I8l0=FbTK5<ciZ1
+!i122 6686
+l77
+L67 89
+VODC:VIFD>^m9VIVTYJllQ0
+!s100 mMf1VhSVGMGQJA1V^Pa9c0
+R9
+32
+R173
+!i10b 1
+R178
+R179
+R180
+!i113 1
+R14
+R15
+Easj_fft_cxb_data_r
+R1
+R33
+R34
+R23
+R4
+R5
+!i122 6687
+R0
+Z181 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cxb_data_r.vhd
+Z182 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cxb_data_r.vhd
+l0
+R148
+V9G_Z7STSK>KEiZBFak:ne2
+!s100 88[6[P_CbR`zR@k=Hil[O3
+R9
+32
+R173
+!i10b 1
+R178
+Z183 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cxb_data_r.vhd|-work|fft_ii_0|
+Z184 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_cxb_data_r.vhd|
+!i113 1
+R14
+R15
+Asyn
+R33
+R34
+R23
+R4
+R5
+DEx4 work 18 asj_fft_cxb_data_r 0 22 9G_Z7STSK>KEiZBFak:ne2
+!i122 6687
+l76
+L66 254
+VbNgo8HA`49[0X2:k`z<nC2
+!s100 nb5D1G]on99GLdlEfOWH93
+R9
+32
+R173
+!i10b 1
+R178
+R183
+R184
+!i113 1
+R14
+R15
+Easj_fft_data_ram
+R1
+R3
+R65
+R34
+R23
+R33
+R4
+R5
+!i122 6689
+R0
+Z185 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_data_ram.vhd
+Z186 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_data_ram.vhd
+l0
+R106
+VgmkWQ2o@[UQJYCcRn7PFX2
+!s100 I^eDnMIjK1^JHPT3D59oY1
+R9
+32
+Z187 !s110 1768999765
+!i10b 1
+Z188 !s108 1768999765.000000
+Z189 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_data_ram.vhd|-work|fft_ii_0|
+Z190 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_data_ram.vhd|
+!i113 1
+R14
+R15
+Asyn
+R3
+R65
+R34
+R23
+R33
+R4
+R5
+DEx4 work 16 asj_fft_data_ram 0 22 gmkWQ2o@[UQJYCcRn7PFX2
+!i122 6689
+l88
+L61 96
+VP?fVTF:_5oh7SoZ7]UKK@3
+!s100 BQj[TVeh1koVS^oaFWONX1
+R9
+32
+R187
+!i10b 1
+R188
+R189
+R190
+!i113 1
+R14
+R15
+Easj_fft_data_ram_dp
+R1
+R3
+R65
+R34
+R23
+R33
+R4
+R5
+!i122 6690
+R0
+Z191 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_data_ram_dp.vhd
+Z192 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_data_ram_dp.vhd
+l0
+R106
+VBVl_eN8iDYBL2mPOUb];13
+!s100 :TB8`[7Z<`32T`F4fQdU^0
+R9
+32
+R187
+!i10b 1
+R188
+Z193 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_data_ram_dp.vhd|-work|fft_ii_0|
+Z194 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_data_ram_dp.vhd|
+!i113 1
+R14
+R15
+Asyn
+R3
+R65
+R34
+R23
+R33
+R4
+R5
+DEx4 work 19 asj_fft_data_ram_dp 0 22 BVl_eN8iDYBL2mPOUb];13
+!i122 6690
+l112
+L63 98
+VKQIbc:S9a9KI8nHm>8dzT3
+!s100 @8Dhao@;9NCl0^j?09F<B3
+R9
+32
+R187
+!i10b 1
+R188
+R193
+R194
+!i113 1
+R14
+R15
+Easj_fft_dataadgen
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6688
+R0
+Z195 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dataadgen.vhd
+Z196 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dataadgen.vhd
+l0
+R37
+VUi=PTIlU<]a8HbJnZ?Ie=0
+!s100 Ug8k9CU[2L5>d5NMAO_Qi3
+R9
+32
+R187
+!i10b 1
+R178
+Z197 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dataadgen.vhd|-work|fft_ii_0|
+Z198 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dataadgen.vhd|
+!i113 1
+R14
+R15
+Agen_all
+R33
+R23
+R34
+R4
+R5
+DEx4 work 17 asj_fft_dataadgen 0 22 Ui=PTIlU<]a8HbJnZ?Ie=0
+!i122 6688
+l66
+L60 3924
+V7Kf?TLSJ?1o7J8S^ZM`Cn1
+!s100 9:OWM<]]1<UkGAehf<[=Z3
+R9
+32
+R187
+!i10b 1
+R178
+R197
+R198
+!i113 1
+R14
+R15
+Easj_fft_dft_bfp
+R1
+R3
+R65
+R34
+R33
+R23
+R24
+R4
+R5
+!i122 6691
+R0
+Z199 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dft_bfp.vhd
+Z200 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dft_bfp.vhd
+l0
+Z201 L42 1
+V`6:]QlcMO`UiLWVh[aQfM3
+!s100 J=UEPN]iZ]`kRA1G5K2gV2
+R9
+32
+Z202 !s110 1768999766
+!i10b 1
+R188
+Z203 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dft_bfp.vhd|-work|fft_ii_0|
+Z204 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dft_bfp.vhd|
+!i113 1
+R14
+R15
+Adft_r4
+R3
+R65
+R34
+R33
+R23
+R24
+R4
+R5
+DEx4 work 15 asj_fft_dft_bfp 0 22 `6:]QlcMO`UiLWVh[aQfM3
+!i122 6691
+l212
+L95 1063
+VkKzTYlehNNBW2IB5aO=mU3
+!s100 2T>m5=^BAVzdOK=k[Zb`>2
+R9
+32
+R202
+!i10b 1
+R188
+R203
+R204
+!i113 1
+R14
+R15
+Easj_fft_dft_bfp_sgl
+R1
+R3
+R65
+R34
+R33
+R23
+R24
+R4
+R5
+!i122 6692
+R0
+Z205 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dft_bfp_sgl.vhd
+Z206 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dft_bfp_sgl.vhd
+l0
+R201
+V@:5ODIZA96d3mLkV2@^Oo1
+!s100 RRkR9;IEeOlYehI3]_`2M1
+R9
+32
+R202
+!i10b 1
+Z207 !s108 1768999766.000000
+Z208 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dft_bfp_sgl.vhd|-work|fft_ii_0|
+Z209 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dft_bfp_sgl.vhd|
+!i113 1
+R14
+R15
+Adft_r4
+R3
+R65
+R34
+R33
+R23
+R24
+R4
+R5
+DEx4 work 19 asj_fft_dft_bfp_sgl 0 22 @:5ODIZA96d3mLkV2@^Oo1
+!i122 6692
+l255
+L80 1110
+V6jM;mSe9kllVdAPCV__>40
+!s100 P8WaoQRKAhoMNg[;4;L7]0
+R9
+32
+R202
+!i10b 1
+R207
+R208
+R209
+!i113 1
+R14
+R15
+Easj_fft_dp_mram
+R1
+R3
+R65
+R34
+R23
+R33
+R4
+R5
+!i122 6694
+R0
+Z210 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dp_mram.vhd
+Z211 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dp_mram.vhd
+l0
+L73 1
+VceGZQ[5<dY?AKk7GWgd^f0
+!s100 ^B`6KnJhDLINDo36m78Pg0
+R9
+32
+Z212 !s110 1768999767
+!i10b 1
+R207
+Z213 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dp_mram.vhd|-work|fft_ii_0|
+Z214 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dp_mram.vhd|
+!i113 1
+R14
+R15
+Asyn
+R3
+R65
+R34
+R23
+R33
+R4
+R5
+DEx4 work 15 asj_fft_dp_mram 0 22 ceGZQ[5<dY?AKk7GWgd^f0
+!i122 6694
+l131
+L92 77
+VmjSFPJk0Xc:eP<TdTMhOc0
+!s100 YQSQ4nAKdfeiEkmH>37<T3
+R9
+32
+R212
+!i10b 1
+R207
+R213
+R214
+!i113 1
+R14
+R15
+Easj_fft_dpi_mram
+R1
+R3
+R65
+R34
+R23
+R33
+R4
+R5
+!i122 6693
+R0
+Z215 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dpi_mram.vhd
+Z216 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dpi_mram.vhd
+l0
+Z217 L76 1
+V@M_`GdTDl`@?:JLRO^]B81
+!s100 ooTiZK]TFWTV2gohaHLGd1
+R9
+32
+R202
+!i10b 1
+R207
+Z218 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dpi_mram.vhd|-work|fft_ii_0|
+Z219 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dpi_mram.vhd|
+!i113 1
+R14
+R15
+Asyn
+R3
+R65
+R34
+R23
+R33
+R4
+R5
+DEx4 work 16 asj_fft_dpi_mram 0 22 @M_`GdTDl`@?:JLRO^]B81
+!i122 6693
+l160
+L98 149
+V?k`9[Im[fC[cafOG>YNEM1
+!s100 _OeS_n[3ff5A@Xdk1k;gS3
+R9
+32
+R202
+!i10b 1
+R207
+R218
+R219
+!i113 1
+R14
+R15
+Easj_fft_dualstream
+R1
+Z220 DPx4 work 18 auk_dspip_math_pkg 0 22 n?1X_^XLl;O4a:8M64kRS0
+Z221 DPx4 work 17 auk_dspip_lib_pkg 0 22 [Lag;Z:I^H?=5^_LMn`Zl2
+R33
+R46
+R23
+R34
+R4
+R5
+!i122 6695
+R0
+Z222 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dualstream.vhd
+Z223 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dualstream.vhd
+l0
+R106
+V2KRYQIKVC_QN[X2fGY=DH3
+!s100 6<]H0jW7[WNngKbWe1nPC3
+R9
+32
+R212
+!i10b 1
+Z224 !s108 1768999767.000000
+Z225 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dualstream.vhd|-work|fft_ii_0|
+Z226 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_dualstream.vhd|
+!i113 1
+R14
+R15
+Atransform
+R220
+R221
+R33
+R46
+R23
+R34
+R4
+R5
+DEx4 work 18 asj_fft_dualstream 0 22 2KRYQIKVC_QN[X2fGY=DH3
+!i122 6695
+l529
+L88 2622
+V6iN2fn;fMCSenHjPH9CzC2
+!s100 jZ=H0K`_>hM=WRQRC9`CH3
+R9
+32
+R212
+!i10b 1
+R224
+R225
+R226
+!i113 1
+R14
+R15
+Easj_fft_in_write_sgl
+R1
+R34
+R33
+R23
+R24
+R4
+R5
+!i122 6696
+R0
+Z227 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_in_write_sgl.vhd
+Z228 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_in_write_sgl.vhd
+l0
+R126
+V8U?`:nbFoMWWOcdI21z9k0
+!s100 >DV<V8:jlmf@]0f5d2n]52
+R9
+32
+R212
+!i10b 1
+R224
+Z229 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_in_write_sgl.vhd|-work|fft_ii_0|
+Z230 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_in_write_sgl.vhd|
+!i113 1
+R14
+R15
+Awriter
+R34
+R33
+R23
+R24
+R4
+R5
+DEx4 work 20 asj_fft_in_write_sgl 0 22 8U?`:nbFoMWWOcdI21z9k0
+!i122 6696
+l117
+L66 1503
+VR>DfoUMX7U?UnIfifFS;61
+!s100 bneePTh<lfR;GR`^nEPho3
+R9
+32
+R212
+!i10b 1
+R224
+R229
+R230
+!i113 1
+R14
+R15
+Easj_fft_lcm_mult
+R1
+R3
+R65
+R34
+R33
+R23
+R24
+R4
+R5
+!i122 6697
+R0
+Z231 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lcm_mult.vhd
+Z232 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lcm_mult.vhd
+l0
+R153
+VS6TY5cMO`^Jk34`Q8_B@A2
+!s100 FCo0LzEgC`di7c?04e35G0
+R9
+32
+Z233 !s110 1768999768
+!i10b 1
+R224
+Z234 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lcm_mult.vhd|-work|fft_ii_0|
+Z235 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lcm_mult.vhd|
+!i113 1
+R14
+R15
+Amult
+R3
+R65
+R34
+R33
+R23
+R24
+R4
+R5
+DEx4 work 16 asj_fft_lcm_mult 0 22 S6TY5cMO`^Jk34`Q8_B@A2
+!i122 6697
+l135
+L62 288
+VM;EoJiOL;S9k7TR6QCHlm2
+!s100 2ZW1zz^GN8lLVhWgPbTWI3
+R9
+32
+R233
+!i10b 1
+R224
+R234
+R235
+!i113 1
+R14
+R15
+Easj_fft_lcm_mult_2m
+R1
+R3
+R65
+R34
+R33
+R23
+R24
+R4
+R5
+!i122 6698
+R0
+Z236 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lcm_mult_2m.vhd
+Z237 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lcm_mult_2m.vhd
+l0
+R68
+V_Gf@^I6L=^`5WV4BMcX;72
+!s100 _a4cA=A@<=hUeVMd_AKcc0
+R9
+32
+R233
+!i10b 1
+Z238 !s108 1768999768.000000
+Z239 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lcm_mult_2m.vhd|-work|fft_ii_0|
+Z240 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lcm_mult_2m.vhd|
+!i113 1
+R14
+R15
+Amult
+R3
+R65
+R34
+R33
+R23
+R24
+R4
+R5
+DEx4 work 19 asj_fft_lcm_mult_2m 0 22 _Gf@^I6L=^`5WV4BMcX;72
+!i122 6698
+l121
+L64 153
+VE1[=R@;dB3FGLccdDze490
+!s100 K;VCo_UM9z>EIIVjh>Kom3
+R9
+32
+R233
+!i10b 1
+R238
+R239
+R240
+!i113 1
+R14
+R15
+Easj_fft_lpp
+R1
+R34
+R33
+R23
+R24
+R4
+R5
+!i122 6699
+R0
+Z241 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpp.vhd
+Z242 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpp.vhd
+l0
+R8
+Vj6FEz?U`3PjSz>3?zIAhe3
+!s100 1]niQl[DHBCb20jN]WePk3
+R9
+32
+R233
+!i10b 1
+R238
+Z243 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpp.vhd|-work|fft_ii_0|
+Z244 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpp.vhd|
+!i113 1
+R14
+R15
+Adft
+R34
+R33
+R23
+R24
+R4
+R5
+DEx4 work 11 asj_fft_lpp 0 22 j6FEz?U`3PjSz>3?zIAhe3
+!i122 6699
+l107
+L67 129
+VAiT[m4ELmI12DaVLOkRN[3
+!s100 ^QDhk_i9Z[DZ_TSd?EQiM1
+R9
+32
+R233
+!i10b 1
+R238
+R243
+R244
+!i113 1
+R14
+R15
+Easj_fft_lpp_serial
+R1
+R34
+R33
+R23
+R24
+R4
+R5
+!i122 6702
+R0
+Z245 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpp_serial.vhd
+Z246 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpp_serial.vhd
+l0
+R168
+V0@l9?moTVMBHHiZkXn`RC2
+!s100 B=?D5FRCcNz@?8kU_0B^c0
+R9
+32
+Z247 !s110 1768999769
+!i10b 1
+Z248 !s108 1768999769.000000
+Z249 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpp_serial.vhd|-work|fft_ii_0|
+Z250 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpp_serial.vhd|
+!i113 1
+R14
+R15
+Alp
+R34
+R33
+R23
+R24
+R4
+R5
+DEx4 work 18 asj_fft_lpp_serial 0 22 0@l9?moTVMBHHiZkXn`RC2
+!i122 6702
+l152
+L65 564
+VO]g431<jB_L7n6ON<>f`93
+!s100 zfJ5C>M7bO:f:Z4;gY;^D2
+R9
+32
+R247
+!i10b 1
+R248
+R249
+R250
+!i113 1
+R14
+R15
+Easj_fft_lpp_serial_r2
+R1
+R34
+R33
+R23
+R24
+R4
+R5
+!i122 6703
+R0
+Z251 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpp_serial_r2.vhd
+Z252 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpp_serial_r2.vhd
+l0
+R112
+V]7jB]aeP6L3nJ:6GOF^ZL0
+!s100 ]I@TX`5aaLZDcLG`X=:OZ2
+R9
+32
+R247
+!i10b 1
+R248
+Z253 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpp_serial_r2.vhd|-work|fft_ii_0|
+Z254 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpp_serial_r2.vhd|
+!i113 1
+R14
+R15
+Alp
+R34
+R33
+R23
+R24
+R4
+R5
+DEx4 work 21 asj_fft_lpp_serial_r2 0 22 ]7jB]aeP6L3nJ:6GOF^ZL0
+!i122 6703
+l119
+L63 340
+VBeB?@Q1Ok0Qa6aRXKf`BK1
+!s100 W`ZGz@QXFTjPFlmBliI[d0
+R9
+32
+R247
+!i10b 1
+R248
+R253
+R254
+!i113 1
+R14
+R15
+Easj_fft_lpprdadgen
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6700
+R0
+Z255 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpprdadgen.vhd
+Z256 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpprdadgen.vhd
+l0
+R168
+VATinm^WWTS<J=2AmN4HCZ1
+!s100 Em:j@MALK3J`?G6UC5JZW2
+R9
+32
+R233
+!i10b 1
+R238
+Z257 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpprdadgen.vhd|-work|fft_ii_0|
+Z258 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpprdadgen.vhd|
+!i113 1
+R14
+R15
+Agen_all
+R33
+R23
+R34
+R4
+R5
+DEx4 work 18 asj_fft_lpprdadgen 0 22 ATinm^WWTS<J=2AmN4HCZ1
+!i122 6700
+l85
+L63 795
+VQR5_?CFhP61[Y9bbELJ3>3
+!s100 =DP>4ohjH:9497I]iVV052
+R9
+32
+R233
+!i10b 1
+R238
+R257
+R258
+!i113 1
+R14
+R15
+Easj_fft_lpprdadr2gen
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6701
+R0
+Z259 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpprdadr2gen.vhd
+Z260 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpprdadr2gen.vhd
+l0
+R168
+V2b2IONaK[;BJFJJT9O6hB2
+!s100 5[laMM4E_RY:E6;3<;BSS0
+R9
+32
+R247
+!i10b 1
+R248
+Z261 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpprdadr2gen.vhd|-work|fft_ii_0|
+Z262 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_lpprdadr2gen.vhd|
+!i113 1
+R14
+R15
+Agen_all
+R33
+R23
+R34
+R4
+R5
+DEx4 work 20 asj_fft_lpprdadr2gen 0 22 2b2IONaK[;BJFJJT9O6hB2
+!i122 6701
+l80
+L63 751
+VLU0V;CVRURZ2EQMJ88N=c2
+!s100 UZaCNnIgY74@EDi=^kD7C1
+R9
+32
+R247
+!i10b 1
+R248
+R261
+R262
+!i113 1
+R14
+R15
+Easj_fft_m_k_counter
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6705
+R0
+Z263 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_m_k_counter.vhd
+Z264 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_m_k_counter.vhd
+l0
+R126
+VfSch35c3e@i?UREY`VlES3
+!s100 Ym?GN?[U;c^><Q5E9Kf@_3
+R9
+32
+Z265 !s110 1768999770
+!i10b 1
+Z266 !s108 1768999770.000000
+Z267 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_m_k_counter.vhd|-work|fft_ii_0|
+Z268 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_m_k_counter.vhd|
+!i113 1
+R14
+R15
+Agen_all
+R33
+R23
+R34
+R4
+R5
+DEx4 work 19 asj_fft_m_k_counter 0 22 fSch35c3e@i?UREY`VlES3
+!i122 6705
+l89
+L59 680
+V6;CJ^lELCbX8_hz6Q>[jc3
+!s100 mc4LmeJVmTY^SWd[Iz1XE1
+R9
+32
+R265
+!i10b 1
+R266
+R267
+R268
+!i113 1
+R14
+R15
+Easj_fft_mult_add
+R1
+R3
+R65
+R33
+R23
+R34
+R4
+R5
+!i122 6704
+R0
+Z269 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_mult_add.vhd
+Z270 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_mult_add.vhd
+l0
+L77 1
+VKQJKCZ?UGB_l75^SaiVSX2
+!s100 6DBz[P1ELZN_W2e<]Joi]1
+R9
+32
+R265
+!i10b 1
+R248
+Z271 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_mult_add.vhd|-work|fft_ii_0|
+Z272 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_mult_add.vhd|
+!i113 1
+R14
+R15
+Asyn
+R3
+R65
+R33
+R23
+R34
+R4
+R5
+DEx4 work 16 asj_fft_mult_add 0 22 KQJKCZ?UGB_l75^SaiVSX2
+!i122 6704
+l130
+L97 63
+V2Z35bC;XI6:B;mj>OcHn?3
+!s100 RQDOSgnLJB@?`d5f:RZMb1
+R9
+32
+R265
+!i10b 1
+R248
+R271
+R272
+!i113 1
+R14
+R15
+Easj_fft_pround
+R1
+R3
+R65
+R33
+R23
+R34
+R4
+R5
+!i122 6706
+R0
+Z273 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_pround.vhd
+Z274 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_pround.vhd
+l0
+R201
+Vac:z:AANOV?4@njlzFdT<3
+!s100 mf==S>JTfgX^R3h9EHVBB0
+R9
+32
+R265
+!i10b 1
+R266
+Z275 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_pround.vhd|-work|fft_ii_0|
+Z276 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_pround.vhd|
+!i113 1
+R14
+R15
+Aaroundpipe_synth
+R3
+R65
+R33
+R23
+R34
+R4
+R5
+DEx4 work 14 asj_fft_pround 0 22 ac:z:AANOV?4@njlzFdT<3
+!i122 6706
+l70
+L57 137
+VQV:fJ[^bAK[nL^mN4K>UT1
+!s100 Kb:KoKJlZPD7C8Q[2YeHQ2
+R9
+32
+R265
+!i10b 1
+R266
+R275
+R276
+!i113 1
+R14
+R15
+Easj_fft_sglstream
+R1
+R220
+R221
+R33
+R46
+R23
+R34
+R4
+R5
+!i122 6707
+R0
+Z277 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_sglstream.vhd
+Z278 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_sglstream.vhd
+l0
+R201
+Vj6zc2MUbMmVQ?PVPGmem92
+!s100 RID6F5iaSHVJJca[2CHVm3
+R9
+32
+Z279 !s110 1768999771
+!i10b 1
+Z280 !s108 1768999771.000000
+Z281 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_sglstream.vhd|-work|fft_ii_0|
+Z282 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_sglstream.vhd|
+!i113 1
+R14
+R15
+Atransform
+R220
+R221
+R33
+R46
+R23
+R34
+R4
+R5
+DEx4 work 17 asj_fft_sglstream 0 22 j6zc2MUbMmVQ?PVPGmem92
+!i122 6707
+l460
+L90 2586
+VFU9Yz^XW@c;^[@MUo::CO2
+!s100 ;OKP4`:?W0^Kz>HCh5H410
+R9
+32
+R279
+!i10b 1
+R280
+R281
+R282
+!i113 1
+R14
+R15
+Easj_fft_si_de_so_b
+R1
+R220
+R221
+R33
+R46
+R23
+R34
+R4
+R5
+!i122 6708
+R0
+Z283 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_de_so_b.vhd
+Z284 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_de_so_b.vhd
+l0
+R133
+Vdd@TQ6KIUemhgHRPV`oKj0
+!s100 N88fh906fJSFXU?8?ZR<S0
+R9
+32
+R279
+!i10b 1
+R280
+Z285 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_de_so_b.vhd|-work|fft_ii_0|
+Z286 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_de_so_b.vhd|
+!i113 1
+R14
+R15
+Atransform
+R220
+R221
+R33
+R46
+R23
+R34
+R4
+R5
+DEx4 work 18 asj_fft_si_de_so_b 0 22 dd@TQ6KIUemhgHRPV`oKj0
+!i122 6708
+l406
+L89 1917
+V_=G1eWJVZ_BWe5f=a>;S=2
+!s100 WKOzR]3;99c=Y:n6N2eFk2
+R9
+32
+R279
+!i10b 1
+R280
+R285
+R286
+!i113 1
+R14
+R15
+Easj_fft_si_de_so_bb
+R1
+R220
+R221
+R33
+R46
+R23
+R34
+R4
+R5
+!i122 6709
+R0
+Z287 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_de_so_bb.vhd
+Z288 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_de_so_bb.vhd
+l0
+R201
+V0OnzPC6ZQSETWJBc]hZWA1
+!s100 Y@fFCn^m_K67NmmWdf[ni2
+R9
+32
+R279
+!i10b 1
+R280
+Z289 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_de_so_bb.vhd|-work|fft_ii_0|
+Z290 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_de_so_bb.vhd|
+!i113 1
+R14
+R15
+Atransform
+R220
+R221
+R33
+R46
+R23
+R34
+R4
+R5
+DEx4 work 19 asj_fft_si_de_so_bb 0 22 0OnzPC6ZQSETWJBc]hZWA1
+!i122 6709
+l553
+L90 2398
+VZ1<e59kjENH1LoFOYIcWh2
+!s100 no_Ik6?<[5[20e[l[gWNh2
+R9
+32
+R279
+!i10b 1
+R280
+R289
+R290
+!i113 1
+R14
+R15
+Easj_fft_si_qe_so_b
+R1
+R220
+R221
+R33
+R46
+R23
+R34
+R4
+R5
+!i122 6710
+R0
+Z291 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_qe_so_b.vhd
+Z292 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_qe_so_b.vhd
+l0
+R112
+VRRh`jOS5FC=U[S11U;kd31
+!s100 dz?<0SXAT@Z`>l@fkaWJY0
+R9
+32
+Z293 !s110 1768999772
+!i10b 1
+Z294 !s108 1768999772.000000
+Z295 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_qe_so_b.vhd|-work|fft_ii_0|
+Z296 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_qe_so_b.vhd|
+!i113 1
+R14
+R15
+Atransform
+R220
+R221
+R33
+R46
+R23
+R34
+R4
+R5
+DEx4 work 18 asj_fft_si_qe_so_b 0 22 RRh`jOS5FC=U[S11U;kd31
+!i122 6710
+l599
+L96 2839
+VkgC:COegS8d<SDUbTO9ZB3
+!s100 5H6zo^?LHYnGYMRfI:WHo1
+R9
+32
+R293
+!i10b 1
+R294
+R295
+R296
+!i113 1
+R14
+R15
+Easj_fft_si_qe_so_bb
+R1
+R220
+R221
+R33
+R46
+R23
+R34
+R4
+R5
+!i122 6711
+R0
+Z297 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_qe_so_bb.vhd
+Z298 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_qe_so_bb.vhd
+l0
+R106
+VWNW<[Femo30l_jD9<^VB62
+!s100 T:N<WUQjE]N5nELm?BI0>1
+R9
+32
+R293
+!i10b 1
+R294
+Z299 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_qe_so_bb.vhd|-work|fft_ii_0|
+Z300 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_qe_so_bb.vhd|
+!i113 1
+R14
+R15
+Atransform
+R220
+R221
+R33
+R46
+R23
+R34
+R4
+R5
+DEx4 work 19 asj_fft_si_qe_so_bb 0 22 WNW<[Femo30l_jD9<^VB62
+!i122 6711
+l595
+L97 2892
+V1`Sn97m>?Q8=GLWKG:GeQ0
+!s100 fE;?;Bj^IoA_c9hT=RmD_3
+R9
+32
+R293
+!i10b 1
+R294
+R299
+R300
+!i113 1
+R14
+R15
+Easj_fft_si_se_so_b
+R1
+R220
+R221
+R33
+R46
+R23
+R34
+R4
+R5
+!i122 6712
+R0
+Z301 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_se_so_b.vhd
+Z302 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_se_so_b.vhd
+l0
+R168
+VFjEfA7h:TVaYL;G`znL`80
+!s100 4^QQKOh6:jnC_gO017ED23
+R9
+32
+R293
+!i10b 1
+R294
+Z303 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_se_so_b.vhd|-work|fft_ii_0|
+Z304 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_se_so_b.vhd|
+!i113 1
+R14
+R15
+Atransform
+R220
+R221
+R33
+R46
+R23
+R34
+R4
+R5
+DEx4 work 18 asj_fft_si_se_so_b 0 22 FjEfA7h:TVaYL;G`znL`80
+!i122 6712
+l479
+L85 2069
+V>Zd^chYb^cZzT;R3_XGf;0
+!s100 Bc:eIRHZi3l9iee8dYJS@3
+R9
+32
+R293
+!i10b 1
+R294
+R303
+R304
+!i113 1
+R14
+R15
+Easj_fft_si_se_so_bb
+R1
+R220
+R221
+R33
+R46
+R23
+R34
+R4
+R5
+!i122 6713
+R0
+Z305 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_se_so_bb.vhd
+Z306 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_se_so_bb.vhd
+l0
+R106
+V=R:JbOz;e:K9<0GzY@@110
+!s100 ^]X8WH6S?T0`O0]D<YEd;2
+R9
+32
+Z307 !s110 1768999773
+!i10b 1
+Z308 !s108 1768999773.000000
+Z309 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_se_so_bb.vhd|-work|fft_ii_0|
+Z310 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_se_so_bb.vhd|
+!i113 1
+R14
+R15
+Atransform
+R220
+R221
+R33
+R46
+R23
+R34
+R4
+R5
+DEx4 work 19 asj_fft_si_se_so_bb 0 22 =R:JbOz;e:K9<0GzY@@110
+!i122 6713
+l484
+L88 2103
+V_J8Il>EIJKUeF>_Z<V4HY2
+!s100 1@iB@3lKgQ0GX5zj8;V272
+R9
+32
+R307
+!i10b 1
+R308
+R309
+R310
+!i113 1
+R14
+R15
+Easj_fft_si_sose_so_b
+R1
+R220
+R221
+R33
+R46
+R23
+R34
+R4
+R5
+!i122 6714
+R0
+Z311 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_sose_so_b.vhd
+Z312 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_sose_so_b.vhd
+l0
+R168
+VJle]8gzig2<hl775QI1>I3
+!s100 V`5NJOZZQdkJjSSDc^J<N3
+R9
+32
+R307
+!i10b 1
+R308
+Z313 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_sose_so_b.vhd|-work|fft_ii_0|
+Z314 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_si_sose_so_b.vhd|
+!i113 1
+R14
+R15
+Atransform
+R220
+R221
+R33
+R46
+R23
+R34
+R4
+R5
+DEx4 work 20 asj_fft_si_sose_so_b 0 22 Jle]8gzig2<hl775QI1>I3
+!i122 6714
+l549
+L85 2451
+VA0LR5XO=z_HVzTF:]o6jc1
+!s100 P9=<znJjY8aoGHiJ>HNbD3
+R9
+32
+R307
+!i10b 1
+R308
+R313
+R314
+!i113 1
+R14
+R15
+Easj_fft_tdl
+R1
+R3
+R65
+R33
+R34
+R23
+R4
+R5
+!i122 6715
+R0
+Z315 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_tdl.vhd
+Z316 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_tdl.vhd
+l0
+R201
+VnC9MfefeQQD5^PWE7dNih2
+!s100 47l0dn8[P9hmTPdG?zBGm2
+R9
+32
+R307
+!i10b 1
+R308
+Z317 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_tdl.vhd|-work|fft_ii_0|
+Z318 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_tdl.vhd|
+!i113 1
+R14
+R15
+Asyn
+R3
+R65
+R33
+R34
+R23
+R4
+R5
+DEx4 work 11 asj_fft_tdl 0 22 nC9MfefeQQD5^PWE7dNih2
+!i122 6715
+l66
+L58 49
+V3lcIY9KzfACczc]BH6Dmd2
+!s100 @GNQ`@@4d>7V>=5SC68ng3
+R9
+32
+R307
+!i10b 1
+R308
+R317
+R318
+!i113 1
+R14
+R15
+Easj_fft_tdl_bit
+R1
+R33
+R34
+R23
+R4
+R5
+!i122 6716
+R0
+Z319 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_tdl_bit.vhd
+Z320 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_tdl_bit.vhd
+l0
+R168
+V2ALej[ENUOAB;MZS04URW2
+!s100 NFFBJMSmk?=:Za]@=EH]n0
+R9
+32
+Z321 !s110 1768999774
+!i10b 1
+R308
+Z322 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_tdl_bit.vhd|-work|fft_ii_0|
+Z323 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_tdl_bit.vhd|
+!i113 1
+R14
+R15
+Asyn
+R33
+R34
+R23
+R4
+R5
+DEx4 work 15 asj_fft_tdl_bit 0 22 2ALej[ENUOAB;MZS04URW2
+!i122 6716
+l58
+L51 31
+Vh9MgMQ[XUN5f0`4:=cLi`3
+!s100 gf8M>Rk6TVfoPGaQU4Cgf3
+R9
+32
+R321
+!i10b 1
+R308
+R322
+R323
+!i113 1
+R14
+R15
+Easj_fft_tdl_bit_rst
+R1
+R33
+R34
+R23
+R4
+R5
+!i122 6717
+R0
+Z324 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_tdl_bit_rst.vhd
+Z325 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_tdl_bit_rst.vhd
+l0
+R168
+VZhEoeGnVlbg=n0Ae;;44?0
+!s100 7P8^OfbLR;diWn@5IKJM_0
+R9
+32
+R321
+!i10b 1
+Z326 !s108 1768999774.000000
+Z327 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_tdl_bit_rst.vhd|-work|fft_ii_0|
+Z328 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_tdl_bit_rst.vhd|
+!i113 1
+R14
+R15
+Asyn
+R33
+R34
+R23
+R4
+R5
+DEx4 work 19 asj_fft_tdl_bit_rst 0 22 ZhEoeGnVlbg=n0Ae;;44?0
+!i122 6717
+l60
+L51 42
+V17ZfRE^PMF35n@@YhM5AC1
+!s100 aaa[bfV0biNZGl05jWcjg1
+R9
+32
+R321
+!i10b 1
+R326
+R327
+R328
+!i113 1
+R14
+R15
+Easj_fft_tdl_rst
+R1
+R3
+R65
+R33
+R34
+R23
+R4
+R5
+!i122 6718
+R0
+Z329 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_tdl_rst.vhd
+Z330 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_tdl_rst.vhd
+l0
+R201
+Vggz<b:[]YHibiI[;K6c@O1
+!s100 N=PPBHP=IXd3^5^?5:5BO2
+R9
+32
+R321
+!i10b 1
+R326
+Z331 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_tdl_rst.vhd|-work|fft_ii_0|
+Z332 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_tdl_rst.vhd|
+!i113 1
+R14
+R15
+Asyn
+R3
+R65
+R33
+R34
+R23
+R4
+R5
+DEx4 work 15 asj_fft_tdl_rst 0 22 ggz<b:[]YHibiI[;K6c@O1
+!i122 6718
+l66
+L57 34
+VaR2>9I=]4HU2Y@FEC<IkJ1
+!s100 V<cmaOeGWEnDZGlF5S88I2
+R9
+32
+R321
+!i10b 1
+R326
+R331
+R332
+!i113 1
+R14
+R15
+Easj_fft_twadgen
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6719
+R0
+Z333 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twadgen.vhd
+Z334 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twadgen.vhd
+l0
+R168
+V3h2z`FPPDC@:Z@XIQ?Uno1
+!s100 n1@1]NG6L7mdzPN4TkYPH1
+R9
+32
+Z335 !s110 1768999775
+!i10b 1
+R326
+Z336 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twadgen.vhd|-work|fft_ii_0|
+Z337 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twadgen.vhd|
+!i113 1
+R14
+R15
+Agen_all
+R33
+R23
+R34
+R4
+R5
+DEx4 work 15 asj_fft_twadgen 0 22 3h2z`FPPDC@:Z@XIQ?Uno1
+!i122 6719
+l63
+L54 433
+Vlh<;@Bz>of?F1NndWUJ^@2
+!s100 G4IR1Gc>0;T2Ff@5ld_OJ0
+R9
+32
+R335
+!i10b 1
+R326
+R336
+R337
+!i113 1
+R14
+R15
+Easj_fft_twadgen_dual
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6720
+R0
+Z338 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twadgen_dual.vhd
+Z339 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twadgen_dual.vhd
+l0
+R168
+Vm;;Ygde36Od27]ceKm`_]1
+!s100 So;fA7Ph[dDiB:o`23dAz1
+R9
+32
+R335
+!i10b 1
+Z340 !s108 1768999775.000000
+Z341 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twadgen_dual.vhd|-work|fft_ii_0|
+Z342 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twadgen_dual.vhd|
+!i113 1
+R14
+R15
+Agen_all
+R33
+R23
+R34
+R4
+R5
+DEx4 work 20 asj_fft_twadgen_dual 0 22 m;;Ygde36Od27]ceKm`_]1
+!i122 6720
+l69
+L55 1040
+V`aO8lVUAe::`BH4<HWGOD1
+!s100 92c0a05<m<1732BBJJ_S<2
+R9
+32
+R335
+!i10b 1
+R340
+R341
+R342
+!i113 1
+R14
+R15
+Easj_fft_twadsogen
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6721
+R0
+Z343 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twadsogen.vhd
+Z344 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twadsogen.vhd
+l0
+R8
+Vk9O=_`Zj[1DN@6d8n=B@f0
+!s100 ?GICnPkObH8ageFcehOGQ0
+R9
+32
+R335
+!i10b 1
+R340
+Z345 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twadsogen.vhd|-work|fft_ii_0|
+Z346 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twadsogen.vhd|
+!i113 1
+R14
+R15
+Agen_all
+R33
+R23
+R34
+R4
+R5
+DEx4 work 17 asj_fft_twadsogen 0 22 k9O=_`Zj[1DN@6d8n=B@f0
+!i122 6721
+l77
+L54 710
+VR6h_]ZS2HA=VQl>Y4jC`D1
+!s100 V5NoLgjgN=fLO;_G:6bY70
+R9
+32
+R335
+!i10b 1
+R340
+R345
+R346
+!i113 1
+R14
+R15
+Easj_fft_twadsogen_q
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6722
+R0
+Z347 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twadsogen_q.vhd
+Z348 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twadsogen_q.vhd
+l0
+R8
+V8IfJTH7izJe;`_M0JX6YK1
+!s100 7LU>WL61jz1^i[h^;7E=^1
+R9
+32
+R335
+!i10b 1
+R340
+Z349 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twadsogen_q.vhd|-work|fft_ii_0|
+Z350 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twadsogen_q.vhd|
+!i113 1
+R14
+R15
+Agen_all
+R33
+R23
+R34
+R4
+R5
+DEx4 work 19 asj_fft_twadsogen_q 0 22 8IfJTH7izJe;`_M0JX6YK1
+!i122 6722
+l84
+L55 789
+VmCDU`b6Zna:]W_Jl<hjP^1
+!s100 Q7Gz3g_cFA4Q6:d6gOA361
+R9
+32
+R335
+!i10b 1
+R340
+R349
+R350
+!i113 1
+R14
+R15
+Easj_fft_twid_rom_tdp
+R1
+R3
+R65
+R34
+R23
+R33
+R4
+R5
+!i122 6724
+R0
+Z351 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twid_rom_tdp.vhd
+Z352 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twid_rom_tdp.vhd
+l0
+R112
+V3mLm0MN=2JiQXME6K:GZV2
+!s100 oB:8aiD`AIIUUiMial:gC3
+R9
+32
+Z353 !s110 1768999776
+!i10b 1
+Z354 !s108 1768999776.000000
+Z355 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twid_rom_tdp.vhd|-work|fft_ii_0|
+Z356 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twid_rom_tdp.vhd|
+!i113 1
+R14
+R15
+Asyn
+R3
+R65
+R34
+R23
+R33
+R4
+R5
+DEx4 work 20 asj_fft_twid_rom_tdp 0 22 3mLm0MN=2JiQXME6K:GZV2
+!i122 6724
+l88
+L59 61
+V@d>;H9<iCe36:a5[ABSBN3
+!s100 7VWl<[mWRONhoZ[ngW6:J3
+R9
+32
+R353
+!i10b 1
+R354
+R355
+R356
+!i113 1
+R14
+R15
+Easj_fft_twiddle_ctrl_qe
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6723
+R0
+Z357 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twiddle_ctrl_qe.vhd
+Z358 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twiddle_ctrl_qe.vhd
+l0
+R168
+Voi;TYn8<0C?JizaK]d@bl0
+!s100 Pde]`DF;ARE`]D5ToQ4zY3
+R9
+32
+R353
+!i10b 1
+R354
+Z359 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twiddle_ctrl_qe.vhd|-work|fft_ii_0|
+Z360 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_twiddle_ctrl_qe.vhd|
+!i113 1
+R14
+R15
+Acnt_sw
+R33
+R23
+R34
+R4
+R5
+DEx4 work 23 asj_fft_twiddle_ctrl_qe 0 22 oi;TYn8<0C?JizaK]d@bl0
+!i122 6723
+l106
+L86 1644
+V?X_eOO^oj8b6^B7:C7YSZ0
+!s100 4;No;XT7MER9oCgeSFL]=1
+R9
+32
+R353
+!i10b 1
+R354
+R359
+R360
+!i113 1
+R14
+R15
+Easj_fft_unbburst_ctrl
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6725
+R0
+Z361 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_unbburst_ctrl.vhd
+Z362 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_unbburst_ctrl.vhd
+l0
+Z363 L34 1
+VY[4A20CHO6bf8z];8CRFL3
+!s100 deGOL;Z1bGEJj2LNIJ@c@0
+R9
+32
+R353
+!i10b 1
+R354
+Z364 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_unbburst_ctrl.vhd|-work|fft_ii_0|
+Z365 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_unbburst_ctrl.vhd|
+!i113 1
+R14
+R15
+Aburst_sw
+R33
+R23
+R34
+R4
+R5
+DEx4 work 21 asj_fft_unbburst_ctrl 0 22 Y[4A20CHO6bf8z];8CRFL3
+!i122 6725
+l89
+L85 55
+VYk4jV55fai>ma8hGj_dOQ2
+!s100 e9memZDSHI9MD_7D3e>=20
+R9
+32
+R353
+!i10b 1
+R354
+R364
+R365
+!i113 1
+R14
+R15
+Easj_fft_unbburst_ctrl_de
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6726
+R0
+Z366 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_unbburst_ctrl_de.vhd
+Z367 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_unbburst_ctrl_de.vhd
+l0
+R363
+VL3<OI9JEW`<?:FjZ^9=060
+!s100 em>?<TI2I:i7IEJb[W]Qm2
+R9
+32
+Z368 !s110 1768999777
+!i10b 1
+R354
+Z369 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_unbburst_ctrl_de.vhd|-work|fft_ii_0|
+Z370 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_unbburst_ctrl_de.vhd|
+!i113 1
+R14
+R15
+Acnt_sw
+R33
+R23
+R34
+R4
+R5
+DEx4 work 24 asj_fft_unbburst_ctrl_de 0 22 L3<OI9JEW`<?:FjZ^9=060
+!i122 6726
+l98
+L94 85
+VGdYF;RnDN9XMZ6F8;LJ>`2
+!s100 @45Rb?<;D3XleTJVPWg=T2
+R9
+32
+R368
+!i10b 1
+R354
+R369
+R370
+!i113 1
+R14
+R15
+Easj_fft_unbburst_ctrl_qe
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6727
+R0
+Z371 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_unbburst_ctrl_qe.vhd
+Z372 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_unbburst_ctrl_qe.vhd
+l0
+R168
+Vfo8gE<KVj;eVXNL3lHI`F3
+!s100 J;LKBL4EZ<YV01B];XmHN3
+R9
+32
+R368
+!i10b 1
+Z373 !s108 1768999777.000000
+Z374 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_unbburst_ctrl_qe.vhd|-work|fft_ii_0|
+Z375 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_unbburst_ctrl_qe.vhd|
+!i113 1
+R14
+R15
+Acnt_sw
+R33
+R23
+R34
+R4
+R5
+DEx4 work 24 asj_fft_unbburst_ctrl_qe 0 22 fo8gE<KVj;eVXNL3lHI`F3
+!i122 6727
+l126
+L119 161
+V4^B`U?FclP6M=mR8elUM;1
+!s100 DHAG;Oo]9OnBbUIl:XAAU3
+R9
+32
+R368
+!i10b 1
+R373
+R374
+R375
+!i113 1
+R14
+R15
+Easj_fft_unbburst_sose_ctrl
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6728
+R0
+Z376 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_unbburst_sose_ctrl.vhd
+Z377 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_unbburst_sose_ctrl.vhd
+l0
+R133
+VMAzm:KJ?j<S31P@6bO7JD3
+!s100 _Xc;>SoFo=o6=2KIcW=UI3
+R9
+32
+R368
+!i10b 1
+R373
+Z378 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_unbburst_sose_ctrl.vhd|-work|fft_ii_0|
+Z379 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_unbburst_sose_ctrl.vhd|
+!i113 1
+R14
+R15
+Aburst_sw
+R33
+R23
+R34
+R4
+R5
+DEx4 work 26 asj_fft_unbburst_sose_ctrl 0 22 MAzm:KJ?j<S31P@6bO7JD3
+!i122 6728
+l83
+L72 171
+VlCbTHcj9:KLNFSGR1nm;g3
+!s100 0>l3T68=[[b`U1;XRD91f0
+R9
+32
+R368
+!i10b 1
+R373
+R378
+R379
+!i113 1
+R14
+R15
+Easj_fft_wrengen
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6729
+R0
+Z380 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_wrengen.vhd
+Z381 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_wrengen.vhd
+l0
+R168
+VhH51F]=EBJFgIc<aId@[m0
+!s100 o4WM7>j@763PcZ^TLL8Mz0
+R9
+32
+Z382 !s110 1768999778
+!i10b 1
+R373
+Z383 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_wrengen.vhd|-work|fft_ii_0|
+Z384 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_wrengen.vhd|
+!i113 1
+R14
+R15
+Agen_all
+R33
+R23
+R34
+R4
+R5
+DEx4 work 15 asj_fft_wrengen 0 22 hH51F]=EBJFgIc<aId@[m0
+!i122 6729
+l76
+L58 344
+VA53M=INN27B62fYPHRFle0
+!s100 lRQHo?NX:7E9gbK3zzUJe1
+R9
+32
+R382
+!i10b 1
+R373
+R383
+R384
+!i113 1
+R14
+R15
+Easj_fft_wrswgen
+R1
+R33
+R23
+R34
+R4
+R5
+!i122 6730
+R0
+Z385 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_wrswgen.vhd
+Z386 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_wrswgen.vhd
+l0
+R168
+V<HkOA9I;0Q=jITh:_Mb3U3
+!s100 GI88cdWGT?`2P@[Dl2G?M0
+R9
+32
+R382
+!i10b 1
+R63
+Z387 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_wrswgen.vhd|-work|fft_ii_0|
+Z388 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/asj_fft_wrswgen.vhd|
+!i113 1
+R14
+R15
+Agen_all
+R33
+R23
+R34
+R4
+R5
+DEx4 work 15 asj_fft_wrswgen 0 22 <HkOA9I;0Q=jITh:_Mb3U3
+!i122 6730
+l66
+L57 1812
+VgZkfCChLYZWLOPPCDzIzC0
+!s100 5;[9om09o6W6d5T1ghb`k1
+R9
+32
+R382
+!i10b 1
+R63
+R387
+R388
+!i113 1
+R14
+R15
+Eauk_dspip_avalon_streaming_block_sink
+R1
+R220
+R46
+R4
+R5
+!i122 6646
+R0
+Z389 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/auk_dspip_avalon_streaming_block_sink.vhd
+Z390 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/auk_dspip_avalon_streaming_block_sink.vhd
+l0
+L22 1
+VWW05ER=nE=[fUH26>cVX;2
+!s100 5FkmY2J9_R^OCddRZBZ_i1
+R9
+32
+Z391 !s110 1768999751
+!i10b 1
+Z392 !s108 1768999751.000000
+Z393 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/auk_dspip_avalon_streaming_block_sink.vhd|-work|fft_ii_0|
+Z394 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/auk_dspip_avalon_streaming_block_sink.vhd|
+!i113 1
+R14
+R15
+Artl
+R220
+R46
+R4
+R5
+DEx4 work 37 auk_dspip_avalon_streaming_block_sink 0 22 WW05ER=nE=[fUH26>cVX;2
+!i122 6646
+l142
+L59 333
+Vik803:S;e99?elY9o>[n11
+!s100 38QZ;1;3801MEH1PhgNl=3
+R9
+32
+R391
+!i10b 1
+R392
+R393
+R394
+!i113 1
+R14
+R15
+Eauk_dspip_avalon_streaming_block_source
+R1
+R3
+R220
+R221
+R46
+R4
+R5
+!i122 6647
+R0
+Z395 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/auk_dspip_avalon_streaming_block_source.vhd
+Z396 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/auk_dspip_avalon_streaming_block_source.vhd
+l0
+L25 1
+Voll^MJQjIiGj;<c@0:__Z3
+!s100 PcknmbOT5fM?^3Ua7SJWA0
+R9
+32
+Z397 !s110 1768999752
+!i10b 1
+R392
+Z398 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/auk_dspip_avalon_streaming_block_source.vhd|-work|fft_ii_0|
+Z399 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/auk_dspip_avalon_streaming_block_source.vhd|
+!i113 1
+R14
+R15
+Artl
+R3
+R220
+R221
+R46
+R4
+R5
+DEx4 work 39 auk_dspip_avalon_streaming_block_source 0 22 oll^MJQjIiGj;<c@0:__Z3
+!i122 6647
+l119
+L47 180
+VHj>HJbQ>0aVDf5ifSaAOH2
+!s100 :k4nQbJ<X1g=i>`Jeb;XM1
+R9
+32
+R397
+!i10b 1
+R392
+R398
+R399
+!i113 1
+R14
+R15
+Eauk_dspip_avalon_streaming_controller
+R1
+R23
+R4
+R5
+!i122 6651
+R0
+Z400 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_avalon_streaming_controller.vhd
+Z401 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_avalon_streaming_controller.vhd
+l0
+L57 1
+V_n<>D1cdnZ;=XV17KGA0a0
+!s100 `cYja=lbnJ^F3>dl>Pc6[3
+R9
+32
+R10
+!i10b 1
+R11
+Z402 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_avalon_streaming_controller.vhd|-work|fft_ii_0|
+Z403 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_avalon_streaming_controller.vhd|
+!i113 1
+R14
+R15
+Astruct
+R23
+R4
+R5
+DEx4 work 37 auk_dspip_avalon_streaming_controller 0 22 _n<>D1cdnZ;=XV17KGA0a0
+!i122 6651
+l97
+L80 44
+V<X9HcACcmzAZ^nU?0R9gC2
+!s100 ml<bfFIC28PDReZ@kc_k;2
+R9
+32
+R10
+!i10b 1
+R11
+R402
+R403
+!i113 1
+R14
+R15
+Eauk_dspip_avalon_streaming_sink
+R1
+R3
+R220
+R221
+R46
+R4
+R5
+!i122 6649
+R0
+Z404 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_avalon_streaming_sink.vhd
+Z405 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_avalon_streaming_sink.vhd
+l0
+Z406 L60 1
+VB7j60_Mc1ZI`anmh`zPCz2
+!s100 WR_9jEX0=Z8MK;14ie:eB1
+R9
+32
+R397
+!i10b 1
+Z407 !s108 1768999752.000000
+Z408 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_avalon_streaming_sink.vhd|-work|fft_ii_0|
+Z409 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_avalon_streaming_sink.vhd|
+!i113 1
+R14
+R15
+Artl
+R3
+R220
+R221
+R46
+R4
+R5
+DEx4 work 31 auk_dspip_avalon_streaming_sink 0 22 B7j60_Mc1ZI`anmh`zPCz2
+!i122 6649
+l171
+L106 604
+V8NbHmcT`gfWOQa0ZLn>@_0
+!s100 :P<1@5=zol[G9AX>0lMI;3
+R9
+32
+R397
+!i10b 1
+R407
+R408
+R409
+!i113 1
+R14
+R15
+Eauk_dspip_avalon_streaming_source
+R1
+R220
+R46
+R4
+R5
+!i122 6650
+R0
+Z410 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_avalon_streaming_source.vhd
+Z411 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_avalon_streaming_source.vhd
+l0
+L72 1
+VR]@8HRWIEc[3KB7gaK=K=0
+!s100 =CcIhGGaPN[@fj@Yj`LI_0
+R9
+32
+R10
+!i10b 1
+R407
+Z412 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_avalon_streaming_source.vhd|-work|fft_ii_0|
+Z413 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_avalon_streaming_source.vhd|
+!i113 1
+R14
+R15
+Artl
+R220
+R46
+R4
+R5
+DEx4 work 33 auk_dspip_avalon_streaming_source 0 22 R]@8HRWIEc[3KB7gaK=K=0
+!i122 6650
+l145
+L105 512
+VDJbbg0i40K79dOL:jhPBl2
+!s100 YQD:X[dIDUTl8ZlcW2EK[0
+R9
+32
+R10
+!i10b 1
+R407
+R412
+R413
+!i113 1
+R14
+R15
+Pauk_dspip_lib_pkg
+R220
+R46
+R4
+R5
+!i122 6645
+R1
+R0
+8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_lib_pkg.vhd
+FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_lib_pkg.vhd
+l0
+L28 1
+V[Lag;Z:I^H?=5^_LMn`Zl2
+!s100 KcRlL:CTnlUz=1CF=kC_S0
+R9
+32
+R391
+!i10b 1
+R392
+!s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_lib_pkg.vhd|-work|fft_ii_0|
+!s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_lib_pkg.vhd|
+!i113 1
+R14
+R15
+Pauk_dspip_math_pkg
+R46
+R4
+R5
+!i122 6644
+R1
+R0
+Z414 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_math_pkg.vhd
+Z415 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_math_pkg.vhd
+l0
+L51 1
+Vn?1X_^XLl;O4a:8M64kRS0
+!s100 [z_3ODE8b:W7XDJ[_]HTW0
+R9
+32
+b1
+R391
+!i10b 1
+Z416 !s108 1768999750.000000
+Z417 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_math_pkg.vhd|-work|fft_ii_0|
+Z418 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_math_pkg.vhd|
+!i113 1
+R14
+R15
+Bbody
+R220
+R46
+R4
+R5
+!i122 6644
+l0
+L128 1
+V^H`3M4[WME?EzH^Ed7LNU1
+!s100 `941_Ff6o7=GBNnXYB1eU3
+R9
+32
+R391
+!i10b 1
+R416
+R417
+R418
+!i113 1
+R14
+R15
+Eauk_dspip_roundsat
+R1
+R46
+R4
+R5
+!i122 6648
+R0
+Z419 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_roundsat.vhd
+Z420 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_roundsat.vhd
+l0
+R68
+VB?9f2JYDRH_oj4;=FSnJ32
+!s100 :Ro[aE[BH^N6eIGEG[O?N3
+R9
+32
+R397
+!i10b 1
+R407
+Z421 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_roundsat.vhd|-work|fft_ii_0|
+Z422 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_roundsat.vhd|
+!i113 1
+R14
+R15
+Abeh
+R46
+R4
+R5
+DEx4 work 18 auk_dspip_roundsat 0 22 B?9f2JYDRH_oj4;=FSnJ32
+!i122 6648
+l63
+L61 378
+VXggCldKcC78L[78CV4YMB3
+!s100 ]_3I0;m7RDoiJeFA6M^`A1
+R9
+32
+R397
+!i10b 1
+R407
+R421
+R422
+!i113 1
+R14
+R15
+Pauk_dspip_text_pkg
+R46
+R4
+R5
+!i122 6643
+R1
+R0
+Z423 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_text_pkg.vhd
+Z424 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_text_pkg.vhd
+l0
+R406
+V?9650dUc4EIVa?hL>i2Z[2
+!s100 D132L>H75ieXQdW840k7O0
+R9
+32
+b1
+Z425 !s110 1768999750
+!i10b 1
+R416
+Z426 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_text_pkg.vhd|-work|fft_ii_0|
+Z427 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/auk_dspip_text_pkg.vhd|
+!i113 1
+R14
+R15
+Bbody
+DPx4 work 18 auk_dspip_text_pkg 0 22 ?9650dUc4EIVa?hL>i2Z[2
+R46
+R4
+R5
+!i122 6643
+l0
+R217
+VBMT?2FQ;8ajiSf>Kz973e3
+!s100 8<?]li33IkB>fMMF[SR`S2
+R9
+32
+R425
+!i10b 1
+R416
+R426
+R427
+!i113 1
+R14
+R15
+Pauk_fft_pkg
+R46
+R4
+R5
+!i122 6656
+R1
+R0
+Z428 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/auk_fft_pkg.vhd
+Z429 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/auk_fft_pkg.vhd
+l0
+L18 1
+VlGBLUAU9@>gB3fj1oZY713
+!s100 KO4z40;KgGV8e8Ta2T@QA0
+R9
+32
+b1
+Z430 !s110 1768999755
+!i10b 1
+Z431 !s108 1768999755.000000
+Z432 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/auk_fft_pkg.vhd|-work|fft_ii_0|
+Z433 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/auk_fft_pkg.vhd|
+!i113 1
+R14
+R15
+Bbody
+DPx4 work 11 auk_fft_pkg 0 22 lGBLUAU9@>gB3fj1oZY713
+R46
+R4
+R5
+!i122 6656
+l0
+L27 1
+VEf7VAQOgil7[UkHS3;gdW3
+!s100 PON1X2]W1W82nXe?d6j<h2
+R9
+32
+R430
+!i10b 1
+R431
+R432
+R433
+!i113 1
+R14
+R15
+v4pRzml6yy6ZpcXQV2FzEMA==
+Z434 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+R430
+!i10b 0
+!s100 9TdBKXcL0aCiP9M6JNLK>1
+R59
+IH[R75LQ7IjGm`>B6TfmkI1
+R60
+!i119 1
+!i8a 1257270304
+S1
+R0
+Z435 w1768999755
+8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/counter_module.sv
+FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/counter_module.sv
+!i122 6658
+R61
+R62
+r1
+!s85 0
+31
+R431
+!s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/counter_module.sv|
+!s90 -reportprogress|300|-sv|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/counter_module.sv|-work|fft_ii_0|
+!i113 1
+Z436 o-sv -work fft_ii_0
+R64
+n50012c5
+Pfft_pack
+R34
+R23
+R4
+R5
+!i122 6659
+R1
+R0
+Z437 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/fft_pack.vhd
+Z438 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/fft_pack.vhd
+l0
+R363
+V8cmehlU<iKfVa62GQ3MT@0
+!s100 1bK16@n_UGFH;TT`Q1^cU1
+R9
+32
+b1
+R38
+!i10b 1
+R431
+Z439 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/fft_pack.vhd|-work|fft_ii_0|
+Z440 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/fft_pack.vhd|
+!i113 1
+R14
+R15
+Bbody
+R33
+R34
+R23
+R4
+R5
+!i122 6659
+l0
+L2136 1
+Ve[K=Vb3bm[4b;aRgcMUN71
+!s100 aiJm8h=n]IJOG00moeCiL2
+R9
+32
+R38
+!i10b 1
+R431
+R439
+R440
+!i113 1
+R14
+R15
+vfftsign_fft_ii_0
+R434
+R58
+!i10b 1
+!s100 IF`bHY_lK53jakBIB?TdV3
+R59
+ImOnhe0Lo`>4OP^>FPW;:?3
+R60
+S1
+R0
+R1
+8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/fftsign_fft_ii_0.sv
+FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/fftsign_fft_ii_0.sv
+!i122 6733
+L0 15 66
+R62
+r1
+!s85 0
+31
+!s108 1768999779.000000
+!s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/fftsign_fft_ii_0.sv|
+!s90 -reportprogress|300|-sv|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/fftsign_fft_ii_0.sv|-work|fft_ii_0|
+!i113 1
+R436
+R64
+vfPAa3NSz2JF3s8u/Hwo9EioZLZVzqtWW0PotHXwOdLM=
+R430
+!i10b 0
+!s100 =D^TQEJGCSRh7RE63RQ5^3
+R59
+IIQGI]X9O>NRKS_L`OdzAI2
+R60
+!i119 1
+!i8a 1319621760
+R0
+R435
+8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/hyper_pipeline_interface.v
+FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/hyper_pipeline_interface.v
+!i122 6657
+R61
+R62
+r1
+!s85 0
+31
+R431
+!s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/hyper_pipeline_interface.v|
+!s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/hyper_pipeline_interface.v|-work|fft_ii_0|
+!i113 1
+R14
+R64
+n5f39f65
+Etwid_rom
+R1
+R3
+R65
+R34
+R23
+R33
+R4
+R5
+!i122 6731
+R0
+Z441 8D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/twid_rom.vhd
+Z442 FD:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/twid_rom.vhd
+l0
+L59 1
+VbHb4dm0fdaECb2=akKcNo3
+!s100 N:N;E9BjTk`5z@C9o1d7C0
+R9
+32
+R382
+!i10b 1
+R63
+Z443 !s90 -reportprogress|300|D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/twid_rom.vhd|-work|fft_ii_0|
+Z444 !s107 D:/3event/23H/quartus_prj/ip_core/fft/fftsign/simulation/submodules/mentor/twid_rom.vhd|
+!i113 1
+R14
+R15
+Asyn
+R3
+R65
+R34
+R23
+R33
+R4
+R5
+DEx4 work 8 twid_rom 0 22 bHb4dm0fdaECb2=akKcNo3
+!i122 6731
+l98
+L77 66
+Vb[:=?zfMM9Q<LG4YC;9L12
+!s100 8JcZJ@WIWhZc=CAB55VZl3
+R9
+32
+R382
+!i10b 1
+R63
+R443
+R444
+!i113 1
+R14
+R15

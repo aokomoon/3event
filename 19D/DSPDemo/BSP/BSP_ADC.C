@@ -248,8 +248,7 @@ void adc_dsp_working(void)
 			}
 			else 
 			{
-				//111
-				//222
+
 				R_OUT2_count++;
 				
 				if(R_OUT2_count>=4)
@@ -312,9 +311,11 @@ void adc_dsp_working(void)
 			
 			  //判断R的情况应该是基于输出电阻和输入电阻的情况来判断
 			  //条件找区别其他比较显著的判断，尽量条件少一点
-			  if(re_flag == 0&&C_flag ==0)			//重新调整条件判断标志位
+			  if(re_flag == 0)			//重新调整条件判断标志位
 			  {
-				if(R_IN > (R_IN_reg*4.5))    ele_state = 1; 		//R1开路，电阻大概为15000+，实际上的电压也是趋近于直流电压，后续有输入电阻相近的做第二个判断条件
+				if(freqc == 1000)
+				{
+					if(R_IN > (R_IN_reg*4.5))    ele_state = 1; 		//R1开路，电阻大概为15000+，实际上的电压也是趋近于直流电压，后续有输入电阻相近的做第二个判断条件
 			    else if((R_OUT_DC >(U_DC_reg*0.5))&&(R_OUT_DC<(U_DC_reg*1.1))&&(pdata1 < 0.1)) 
 				{
 					if(R_IN>(R_IN_reg*4)) ele_state = 10; //C2开路
@@ -352,10 +353,6 @@ void adc_dsp_working(void)
 							ele_state = 11;			//C2两倍
 						}
 						else
-						// {
-						// 	ele_state = 0;
-
-						// }
 						{
 							static uint8_t counter  = 0;
 							if(counter <=3)
@@ -365,35 +362,25 @@ void adc_dsp_working(void)
 							else
 							{
 								AD9854_SetSine(100000,4095);
-								C_flag = 1;
 								counter =0;
-								
-								//ele_state = 0;
 							}
 							 
 						}
-							
-			   	        
 			   		}
-			    }
-			  }
-			  else  if(C_flag == 1)
-			  {
-				if(freqc == 100000)
-				{
-					if( ((pdata1*U_OUT_ZOOM))/((pdata3/U_IN_ZOOM)) >137)
+				 }
+				
+			   }
+			   else if(freqc == 100000)
+			   {
+				if(((pdata1*U_OUT_ZOOM))/((pdata3/U_IN_ZOOM)) >137)
 					    ele_state = 12;		//C3开路
 					else 
 					{
 						AD9854_SetSine(1000,4095);
 						ele_state = 0;	
-						C_flag = 0;
 					}
-				}
-					
-						
-			// 		printf("%d,%f,%d,%f,%f\n",ele_state,U_ZOOM,R_OUT_state,U_source_reg,U_in_reg);
 			   }
+			  }
 			  else 
 			  {
 				// static uint8_t RE_ct_count = 0;	//	由于在开关时会有不稳定状态，所以取稳定时的状态作为判断标准
